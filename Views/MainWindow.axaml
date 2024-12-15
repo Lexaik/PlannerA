@@ -15,6 +15,7 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+	
     
        <StackPanel Orientation="Vertical">
         <Grid>
@@ -32,35 +33,75 @@
         <Button x:Name="Project"
                 Content="Заказы"
                 Grid.Column="0"
-                Grid.Row="0"/>
+                Grid.Row="0"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Supplies"
                 Content="Оборудование"
                 Grid.Column="1"
-                Grid.Row="0"/>
+                Grid.Row="0"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Employee"
                 Content="Сотрудники"
                 Grid.Column="2"
-                Grid.Row="0"/>
+                Grid.Row="0"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Materials"
                 Content="Материалы"
                 Grid.Column="3"
-                Grid.Row="0"/>
+                Grid.Row="0"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+        Margin="0"/>
         <Button x:Name="AllProject"
                 Content="Список заказов"
                 Grid.Column="0"
-                Grid.Row="1"/>
+                Grid.Row="1"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Add"
                 Content="Добавить"
                 Grid.Column="1"
-                Grid.Row="1"/>
+                Grid.Row="1"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Edit"
                 Content="Редактировать"
                 Grid.Column="2"
-                Grid.Row="1"/>
+                Grid.Row="1"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         <Button x:Name="Delete"
                 Content="Удалить"
                 Grid.Column="3"
-                Grid.Row="1"/>
+                Grid.Row="1"
+				Width="200"
+                Height="30"
+				HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0"/>
         
         </Grid>
         <Grid ShowGridLines="True">
@@ -94,13 +135,15 @@
                         <RowDefinition Height="*"/>
                         
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="Proj"
+			
+			<TextBlock x:Name="Proj"
                        Text="№ Заказа/день"/>
-                <TextBlock x:Name="Day1"
+                 <TextBlock x:Name="Day1"
                        Text="1"
                        Grid.Column="1"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day2"
+                       Grid.Row="0"
+			           TextWrapping="Wrap"/>
+			    <TextBlock x:Name="Day2"
                        Text="2"
                        Grid.Column="2"
                        Grid.Row="0"/>
