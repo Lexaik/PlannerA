@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
 using System;
+using System.Collections.Generic;
+using PlannerA.Models;
 
 namespace PlannerA;
 
@@ -20,4 +22,15 @@ abstract class Program
             .WithInterFont()
             .LogToTrace()
             .UseReactiveUI();
+    
+    public Plant aurora = new Plant
+    {
+        name = "Aurora",
+        employee = new List<Worker>
+        {"Василий", "Андрей", "Александр", "Алексей", "Александр", "Алексей", "Александр", "Алексей", "Александр", "Алексей", "Александ},
+        equipment = new List<Machinery>(),
+        orders = new List<Order>(),
+        inventories = new Dictionary<Item, int>(),
+        
+    };
 }
