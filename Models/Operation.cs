@@ -4,6 +4,8 @@ namespace PlannerA.Models;
 
 public class Operation
 {
-    public string OperationName { get; set; }
-    public DateTime OperationDuration { get; set; }
+    public string name { get; set; }
+    public string type { get; set; }
+    public DateTime date_start { get; set; }
+    public DateTime date_execute { get; set; }
 }

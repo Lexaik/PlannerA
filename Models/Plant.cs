@@ -5,8 +5,9 @@ namespace PlannerA.Models;
 public class Plant
 {
     public string name { get; set; }
-    public List<Employee> employees { get; set; }
-    public List<Inventories> inventories { get; set; }
-    public List<Machinery> machinery { get; set; }
+    public List<Worker> employee;
+    public Dictionary<Item, int> inventories;
+    public List<Machinery> equipment;
+    public List<Order> orders;
     
 }

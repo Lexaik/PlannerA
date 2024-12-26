@@ -2,10 +2,11 @@
 
 namespace PlannerA.Models;
 
-public class Machinery
+public class Worker
 {
     public string name { get; set; }
     public string type { get; set; }
     public List <Operation> loading;
-   
+
+
 }
