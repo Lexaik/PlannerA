@@ -23,14 +23,6 @@ abstract class Program
             .LogToTrace()
             .UseReactiveUI();
     
-    public Plant aurora = new Plant
-    {
-        name = "Aurora",
-        employee = new List<Worker>
-        {"Василий", "Андрей", "Александр", "Алексей", "Александр", "Алексей", "Александр", "Алексей", "Александр", "Алексей", "Александ},
-        equipment = new List<Machinery>(),
-        orders = new List<Order>(),
-        inventories = new Dictionary<Item, int>(),
-        
-    };
+    Factory aurora = new Factory("Aurora");
+   
 }
