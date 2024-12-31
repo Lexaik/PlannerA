@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace PlannerA.Models;
-class Factory 
+public class Factory 
 {
     public string name { get; set; }
     public List<Worker> employee;
