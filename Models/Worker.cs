@@ -6,7 +6,7 @@ public class Worker
 {
     public string name { get; init; }
     public string type { get; init; }
-    public List <Operation>? loading;
+    public List <Operation> loading;
 
     public Worker(string name, string type)
     {

@@ -13,7 +13,6 @@ public class Operation
     {
         this.name = name;
         this.type = type;
-        this.date_start = date_start;
-        this.date_execute = date_execute;
+        
     }
 }
