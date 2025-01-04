@@ -9,313 +9,289 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="PlannerA">
 
-	
-	
+	<StackPanel Orientation="Vertical">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+			<StackPanel Orientation="Horizontal">
 
-	
-    
-       <StackPanel Orientation="Vertical">
-        <Grid>
-               <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width="*"/>
-                     <ColumnDefinition Width="*"/>
-                     <ColumnDefinition Width="*"/>
-                     <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions> -->
+				<TabControl Margin="5">
+					<TabItem Header="Заказы">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Margin="5">Перечень заказов</TextBlock>
+							<SplitButton Content="Выбрать" >
+								<SplitButton.Flyout>
+									<MenuFlyout Placement="Bottom">
+										<MenuItem Header="Труба стальная 1000 штук">
+											<MenuItem Header="Договор 1 от 20.03.2023" />
+											<MenuItem Header="Договор 2 от 22.03.2023" />
+											<MenuItem Header="Диаметр 3 от 29.03.2023" />
+										</MenuItem>
+										<MenuItem Header="Втулка золотая 1 штука"
+												  InputGesture="Ctrl+A" />
+										<MenuItem Header="Шестерня шерстяная 10 штук" />
+									</MenuFlyout>
+								</SplitButton.Flyout>
+							</SplitButton>
+							<Button Margin="5">Редактировать</Button>
+						</StackPanel>
+					</TabItem>
 
-			<TabControl Margin="5">
-				<TabItem Header="Заказы">
-					<StackPanel Orientation="Vertical">
-						<TextBlock Margin="5">--- 
-						
-					</TextBlock>
-						 <SplitButton Content="Редактировать" >
-							     <SplitButton.Flyout>
-								 <MenuFlyout Placement="Bottom">
-									<MenuItem Header="Создать новый">
-										<!---><MenuItem Header="Договор 1 от 20.03.2023" />
-										<MenuItem Header="Договор 2 от 22.03.2023" />
-										<MenuItem Header="Диаметр 3 от 29.03.2023" /> -->
-									</MenuItem>
-									<MenuItem Header="Изменить имеющийся"											  
-											  InputGesture="Ctrl+A" />
-									<MenuItem Header="Еще что-нибудь..." />
-								    </MenuFlyout>
-							        </SplitButton.Flyout>
-						            </SplitButton> 
-						<Button Margin="5">Вернуться к дате</Button>
-						<Button Margin="5">Создать</Button>
-					</StackPanel>
-					
-				</TabItem>
-				<TabItem Header="Оборудование">
-					<StackPanel Orientation="Vertical">
-						<TextBlock Margin="5">Перечень оборудования</TextBlock>
-						            <SplitButton Content="Выбрать" >
-							        <SplitButton.Flyout>
-								        <MenuFlyout Placement="Bottom">
-									    <MenuItem Header="Труба стальная">
-										<MenuItem Header="Диаметр 10" />
-										<MenuItem Header="Диаметр 20" />
-										<MenuItem Header="Диаметр 30" />
-									</MenuItem>
-									<MenuItem Header="Втулка золотая"
-											  InputGesture="Ctrl+A" />
-									<MenuItem Header="Шестерня шерстяная" />
-								    </MenuFlyout>
-						           </SplitButton.Flyout>
-						           </SplitButton>
-						<Button Margin="5">Редактировать</Button>
-						<Button Margin="5">Создать</Button>
-					</StackPanel>
-				</TabItem>
-				<TabItem Header="Сотрудники">
-					<StackPanel Orientation="Vertical">
-						<TextBlock Margin="5">Список сотрудников:</TextBlock>
-						         <SplitButton Content="Выбрать" >
-							    <SplitButton.Flyout>
-								<MenuFlyout Placement="Bottom">
-									<MenuItem Header="Иванов"> </MenuItem>
-									<MenuItem Header="Петров"> </MenuItem>											 
-									<MenuItem Header="Сидоров"></MenuItem>
-									<MenuItem Header="Иванов"> </MenuItem>
-									<MenuItem Header="Петров"> </MenuItem>											  
-									<MenuItem Header="Сидоров" />
-								   </MenuFlyout>
-							       </SplitButton.Flyout>
-						           </SplitButton>
-						<Button Margin="5">Редактировать</Button>
-						<Button Margin="5">Создать</Button>
-					</StackPanel>
-				</TabItem>
-				<TabItem Header="Материалы">
-					<StackPanel Orientation="Vertical">
-						<TextBlock Margin="5">Перечень материалов</TextBlock>
-						<TextBlock Margin="5">ВСТАВИТЬ ПОЛЕ СО СПИСКОМ</TextBlock>
-						<Button Margin="5">Редактировать</Button>
-						<Button Margin="5">Создать</Button>
-					</StackPanel>
-				</TabItem>
-			</TabControl>
 
-				<!--<TabItem Header="Добавить">
-					<StackPanel Orientation="Vertical">
-						<TextBlock Margin="5">Перечень того, что можно добавить:</TextBlock>
-						<TextBlock Margin="5">ВСТАВИТЬ ПОЛЕ СО СПИСКОМ</TextBlock>
-						
-					</StackPanel>
-				</TabItem>
-				
-		
+					<TabItem Header="Оборудование">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Margin="5">Перечень оборудования</TextBlock>
+							<ListBox x:Name="Equipment" Margin="5" Height="200" SelectionMode="Single">
+								<ListBoxItem> 1</ListBoxItem>
+								<ListBoxItem> 2</ListBoxItem>
+								<ListBoxItem> 3</ListBoxItem>
+								<ListBoxItem> 4</ListBoxItem>
+								<ListBoxItem> 5</ListBoxItem>
+								<ListBoxItem> 6</ListBoxItem>
+								<ListBoxItem> 7</ListBoxItem>
+								<ListBoxItem> 8</ListBoxItem>
+								<ListBoxItem> 9</ListBoxItem>
+							</ListBox>
+							<StackPanel Orientation="Horizontal">
+								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
+								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
+								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
+							</StackPanel>
+						</StackPanel>
+					</TabItem>
 
-					
-        <Button x:Name="Project"
-                Content="Заказы"
-                Grid.Column="0"
-                Grid.Row="0"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Supplies"
-                Content="Оборудование"
-                Grid.Column="1"
-                Grid.Row="0"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Employee"
-                Content="Сотрудники"
-                Grid.Column="2"
-                Grid.Row="0"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Materials"
-                Content="Материалы"
-                Grid.Column="3"
-                Grid.Row="0"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-        Margin="0"/>
-        <Button x:Name="AllProject"
-                Content="Список заказов"
-                Grid.Column="0"
-                Grid.Row="1"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Add"
-                Content="Добавить"
-                Grid.Column="1"
-                Grid.Row="1"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Edit"
-                Content="Редактировать"
-                Grid.Column="2"
-                Grid.Row="1"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        <Button x:Name="Delete"
-                Content="Удалить"
-                Grid.Column="3"
-                Grid.Row="1"
-				Width="200"
-                Height="30"
-				HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0"/>
-        
-        </Grid>
-        <Grid ShowGridLines="True">
-                <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        
-                </Grid.RowDefinitions>
-			
-			<TextBlock x:Name="Proj"
-                       Text="№ Заказа/день"/>
-                 <TextBlock x:Name="Day1"
-                       Text="1"
-                       Grid.Column="1"
-                       Grid.Row="0"
-			           TextWrapping="Wrap"/>
-			    <TextBlock x:Name="Day2"
-                       Text="2"
-                       Grid.Column="2"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day3"
-                       Text="3"
-                       Grid.Column="3"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day4"
-                       Text="4"
-                       Grid.Column="4"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day5"
-                       Text="5"
-                       Grid.Column="5"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day6"
-                       Text="6"
-                       Grid.Column="6"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day7"
-                       Text="7"
-                       Grid.Column="7"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Today"
-                       Text="Now"
-                       Grid.Column="8"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day9"
-                       Text="9"
-                       Grid.Column="9"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day10"
-                       Text="10"
-                       Grid.Column="10"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day11"
-                       Text="11"
-                       Grid.Column="11"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day12"
-                       Text="2"
-                       Grid.Column="12"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day13"
-                       Text="13"
-                       Grid.Column="13"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day14"
-                       Text="14"
-                       Grid.Column="14"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day15"
-                       Text="15"
-                       Grid.Column="15"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day16"
-                       Text="16"
-                       Grid.Column="16"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day17"
-                       Text="17"
-                       Grid.Column="17"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day18"
-                       Text="18"
-                       Grid.Column="18"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day19"
-                       Text="19"
-                       Grid.Column="19"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day20"
-                       Text="20"
-                       Grid.Column="20"
-                       Grid.Row="0"/>
-                <TextBlock x:Name="Day21"
-                       Text="21"
-                       Grid.Column="21"
-                       Grid.Row="0"/>
-        </Grid>
-    
-                
-    </StackPanel>
-    
-    
+					<TabItem Header="Сотрудники">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Margin="5">Перечень сотрудников</TextBlock>
+							<ListBox x:Name="Staff" Margin="5" Height="200" SelectionMode="Single">
+								<ListBoxItem> 1</ListBoxItem>
+								<ListBoxItem> 2</ListBoxItem>
+								<ListBoxItem> 3</ListBoxItem>
+								<ListBoxItem> 4</ListBoxItem>
+								<ListBoxItem> 5</ListBoxItem>
+								<ListBoxItem> 6</ListBoxItem>
+								<ListBoxItem> 7</ListBoxItem>
+								<ListBoxItem> 8</ListBoxItem>
+								<ListBoxItem> 9</ListBoxItem>
+							</ListBox>
+							<StackPanel Orientation="Horizontal">
+								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
+								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
+								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
+							</StackPanel>
+						</StackPanel>
+					</TabItem>
+
+					<TabItem Header="Материалы">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Margin="5">Перечень материалов</TextBlock>
+							<ListBox x:Name="MaterialsList" Margin="5" Height="200" SelectionMode="Single">
+								<ListBoxItem>Деталь 1</ListBoxItem>
+								<ListBoxItem>Деталь 2</ListBoxItem>
+								<ListBoxItem>Деталь 3</ListBoxItem>
+								<ListBoxItem>Деталь 4</ListBoxItem>
+								<ListBoxItem>Деталь 5</ListBoxItem>
+								<ListBoxItem>Деталь 6</ListBoxItem>
+								<ListBoxItem>Деталь 7</ListBoxItem>
+								<ListBoxItem>Деталь 8</ListBoxItem>
+								<ListBoxItem>Деталь 9</ListBoxItem>
+							</ListBox>
+							<StackPanel Orientation="Horizontal">
+								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
+								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
+								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
+							</StackPanel>
+						</StackPanel>
+					</TabItem>
+
+
+					<!--	
+			<Grid ShowGridLines="True">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Label x:Name="Proj"
+						   Content="№ Заказа/день"/>
+				<Label x:Name="Day1"
+						   Content="1"
+						   Grid.Column="1"
+						   Grid.Row="0"
+						   Background="LightSkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day2"
+						   Content="2"
+						   Grid.Column="2"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day3"
+						   Content="3"
+						   Grid.Column="3"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day4"
+						   Content="4"
+						   Grid.Column="4"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day5"
+						   Content="5"
+						   Grid.Column="5"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day6"
+						   Content="6"
+						   Grid.Column="6"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day7"
+						   Content="7"
+						   Grid.Column="7"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Today"
+						   Content=""
+						   Grid.Column="8"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day9"
+						   Content="9"
+						   Grid.Column="9"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day10"
+						   Content="10"
+						   Grid.Column="10"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day11"
+						   Content="11"
+						   Grid.Column="11"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+			   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day12"
+						   Content="2"
+						   Grid.Column="12"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day13"
+						   Content="13"
+						   Grid.Column="13"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day14"
+						   Content="14"
+						   Grid.Column="14"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day15"
+						   Content="15"
+						   Grid.Column="15"
+						   Grid.Row="0"
+					   Background="SkyBlue"
+			   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day16"
+						   Content="16"
+						   Grid.Column="16"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day17"
+						   Content="17"
+						   Grid.Column="17"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day18"
+						   Content="18"
+						   Grid.Column="18"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day19"
+						   Content="19"
+						   Grid.Column="19"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day20"
+						   Content="20"
+						   Grid.Column="20"
+						   Grid.Row="0"
+						   Background="LightBlue"
+						   MouseDown="DayButton_MouseDown"/>
+				<Label x:Name="Day21"
+						   Content="21"
+						   Grid.Column="21"
+						   Grid.Row="0"
+						   Background="SkyBlue"
+						   MouseDown="DayButton_MouseDown"/>
+
+			    </Grid> -->
+				</TabControl>
+			</StackPanel>
+		</Grid>
+
+	</StackPanel>
+
+
 </Window>
+
+

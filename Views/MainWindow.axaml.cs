@@ -39,47 +39,48 @@ public partial class MainWindow : Window
     {
         AvaloniaXamlLoader.Load(this);
     }
-    
+
     private void SelectButton_Click(object sender, RoutedEventArgs e)
-{
-    var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
-    if (selectedItem != null)
     {
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
             // Действие для выбранного элемента
-           // MessageBox.Show($"Вы выбрали: {selectedItem.Content}");
+            // MessageBox.Show($"Вы выбрали: {selectedItem.Content}");
+        }
     }
-}
 
-private void EditButton_Click(object sender, RoutedEventArgs e)
-{
-    var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
-    if (selectedItem != null)
+    private void EditButton_Click(object sender, RoutedEventArgs e)
     {
-        // Логика редактирования выбранного элемента
-        //MessageBox.Show($"Редактирование: {selectedItem.Content}");
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            // Логика редактирования выбранного элемента
+            //MessageBox.Show($"Редактирование: {selectedItem.Content}");
+        }
     }
-}
 
-private void DeleteButton_Click(object sender, RoutedEventArgs e)
-{
-    var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
-    if (selectedItem != null)
+    private void DeleteButton_Click(object sender, RoutedEventArgs e)
     {
-        MaterialsList.Items.Remove(selectedItem);
-        // Уведомление об удалении
-        //MessageBox.Show($"Удалено: {selectedItem.Content}");
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            MaterialsList.Items.Remove(selectedItem);
+            // Уведомление об удалении
+            //MessageBox.Show($"Удалено: {selectedItem.Content}");
+        }
     }
-}
 
-private void UseInDiagramButton_Click(object sender, RoutedEventArgs e)
-{
-    var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
-    if (selectedItem != null)
+    private void UseInDiagramButton_Click(object sender, RoutedEventArgs e)
     {
-        // Логика использования в диаграмме
-       // MessageBox.Show($"Использование в диаграмме: {selectedItem.Content}");
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            // Логика использования в диаграмме
+            // MessageBox.Show($"Использование в диаграмме: {selectedItem.Content}");
+        }
     }
-}
 
 }
-    
+
+
