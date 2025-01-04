@@ -4,15 +4,15 @@ namespace PlannerA.Models;
 
 public class Operation
 {
-    public string name { get; set; }
-    public string type { get; set; }
-    public DateTime date_start { get; set; }
-    public DateTime date_execute { get; set; }
+    public string Name { get; set; }
+    public string Type { get; set; }
+    public DateTime DateStart { get; set; }
+    public DateTime DateExecute { get; set; }
 
-    public Operation(string name, string type, DateTime date_start, DateTime date_execute)
+    public Operation(string name, string type, DateTime dateStart, DateTime dateExecute)
     {
-        this.name = name;
-        this.type = type;
+        this.Name = name;
+        this.Type = type;
         
     }
 }

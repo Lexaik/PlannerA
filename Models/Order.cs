@@ -5,21 +5,21 @@ namespace PlannerA.Models;
 
 public class Order
 {
-    public string name { get; set; }
-    public Dictionary<Item, int> products;
-    public DateTime date_start;
-    public DateTime date_execute;
+    public string Name { get; set; }
+    public Dictionary<Item, int> Products;
+    public DateTime DateStart;
+    public DateTime PlaneDateExecute;
 
-    public Order(string name, DateTime date_start, DateTime date_execute)
+    public Order(string name, DateTime dateStart, DateTime planeDateExecute)
     {
-        this.name = name;
-        products = new Dictionary<Item, int>();
-        this.date_start = date_start;
-        this.date_execute = date_execute;
+        this.Name = name;
+        Products = new Dictionary<Item, int>();
+        this.DateStart = dateStart;
+        this.PlaneDateExecute = planeDateExecute;
     }
 
-    public void addProducts(Item item, int quantity)
+    public void AddProducts(Item item, int quantity)
         {
-            products[item] = quantity;
+            Products[item] = quantity;
         } 
 }

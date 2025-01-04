@@ -1,7 +1,7 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.ReactiveUI;
-using System;
-using PlannerA.Models;
+using System.Linq;
 
 namespace PlannerA;
 
@@ -21,9 +21,8 @@ abstract class Program
             .WithInterFont()
             .LogToTrace()
             .UseReactiveUI();
-
-    
     
 }
+
 
 

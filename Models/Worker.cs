@@ -4,19 +4,19 @@ namespace PlannerA.Models;
 
 public class Worker
 {
-    public string name { get; init; }
-    public string type { get; init; }
-    public List <Operation> loading;
+    public string Name { get; init; }
+    public string Type { get; init; }
+    public List <Operation> Loading;
 
     public Worker(string name, string type)
     {
-        this.name = name;
-        this.type = type;
-        loading = new List<Operation>();
+        this.Name = name;
+        this.Type = type;
+        Loading = new List<Operation>();
     }
     
-    public void addOperation(Operation operation)
+    public void AddOperation(Operation operation)
     {
-        loading.Add(operation);
+        Loading.Add(operation);
     }
 }

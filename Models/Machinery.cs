@@ -4,20 +4,20 @@ namespace PlannerA.Models;
 
 public class Machinery
 {
-    public string name { get; set; }
-    public string type { get; set; }
-    public List <Operation> loading;
+    public string Name { get; set; }
+    public string Type { get; set; }
+    public List <Operation> Loading;
     
     public Machinery(string name, string type)
     {
-        this.name = name;
-        this.type = type;
-        loading = new List<Operation>();
+        this.Name = name;
+        this.Type = type;
+        Loading = new List<Operation>();
     }
     
     public void AddOperation(Operation operation)
     {
-        loading.Add(operation);
+        Loading.Add(operation);
     }
 }
 

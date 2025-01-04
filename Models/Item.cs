@@ -4,23 +4,23 @@ namespace PlannerA.Models;
 
 public class Item
 {
-    public string name { get; set; }
-    public Dictionary<Item, int> sub_items;
-    public List<Operation> process { get; set; }
+    public string Name { get; set; }
+    public Dictionary<Item, int> SubItems;
+    public List<Operation> Process { get; set; }
 
     public Item(string name)
     {
-     this.name = name;
-     sub_items = new Dictionary<Item, int>();
-     process = new List<Operation>();
+     this.Name = name;
+     SubItems = new Dictionary<Item, int>();
+     Process = new List<Operation>();
     }
-    public void addSubItems(Item item, int quantity)
+    public void AddSubItems(Item item, int quantity)
     {
-        sub_items[item] = quantity;
+        SubItems[item] = quantity;
     }
 
-    public void addProcess(Operation operation)
+    public void AddProcess(Operation operation)
     {
-        process.Add(operation);
+        Process.Add(operation);
     }
 }
