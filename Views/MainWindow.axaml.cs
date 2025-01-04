@@ -6,86 +6,81 @@ using Avalonia.Media;
 using Avalonia.Styling;
 namespace PlannerA.Views;
 
+using Avalonia.Interactivity;
+using System.Collections.Generic;
+
 public partial class MainWindow : Window
 {
+    private ListBox _listBox;
+    private TextBox _textBox;
+    private Button _addButton;
+    private Button _editButton;
+    private Button _deleteButton;
+    private Button _useButton;
+
+    private List<string> _items = new List<string>();
+
+    public object MessageBox { get; private set; }
+
     public MainWindow()
     {
         InitializeComponent();
-        ApplyStyles();
+        // ApplyStyles();
+
+        InitializeComponent();
+#if DEBUG
+        this.AttachDevTools();
+#endif
+
     }
+
 
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
     }
 
-    private void ApplyStyles()
+    private void SelectButton_Click(object sender, RoutedEventArgs e)
     {
-
-        var buttonStyle = new Style(x => x.OfType<Button>())
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
         {
-            Setters =
-            {
-                new Setter(Button.FontFamilyProperty, new FontFamily("Verdana")),
-                new Setter(Button.BackgroundProperty, Brushes.LightSteelBlue),
-                new Setter(Button.ForegroundProperty, Brushes.Black),
-                new Setter(Button.MarginProperty, new Thickness(0)),
-               
-            }
-        };
-               
-        var labelStyle = new Style(x => x.OfType<Label>())
-        {
-            Setters =
-            {
-                new Setter(Label.FontFamilyProperty, new FontFamily("Verdana")),
-                new Setter(Label.BackgroundProperty, Brushes.LightSkyBlue),
-                new Setter(Label.ForegroundProperty, Brushes.Black),
-                new Setter(Label.MarginProperty, new Thickness(0)), 
-               
-            }
-        };
-
-        this.Styles.Add(buttonStyle);
-        this.Styles.Add(labelStyle);
+            // Действие для выбранного элемента
+            // MessageBox.Show($"Вы выбрали: {selectedItem.Content}");
+        }
     }
+
+    private void EditButton_Click(object sender, RoutedEventArgs e)
+    {
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            // Логика редактирования выбранного элемента
+            //MessageBox.Show($"Редактирование: {selectedItem.Content}");
+        }
+    }
+
+    private void DeleteButton_Click(object sender, RoutedEventArgs e)
+    {
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            MaterialsList.Items.Remove(selectedItem);
+            // Уведомление об удалении
+            //MessageBox.Show($"Удалено: {selectedItem.Content}");
+        }
+    }
+
+    private void UseInDiagramButton_Click(object sender, RoutedEventArgs e)
+    {
+        var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
+        if (selectedItem != null)
+        {
+            // Логика использования в диаграмме
+            // MessageBox.Show($"Использование в диаграмме: {selectedItem.Content}");
+        }
+    }
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-using Avalonia.Controls;
-
-namespace PlannerA.Views;
-
-public partial class MainWindow : Window
-{
-     
-    public MainWindow()
-    {
-        InitializeComponent();
-    }
-}
-*/
