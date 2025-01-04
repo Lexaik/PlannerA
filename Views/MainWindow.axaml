@@ -9,6 +9,9 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="PlannerA">
 
+	
+	
+
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -28,8 +31,94 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions> -->
+
+			<TabControl Margin="5">
+				<TabItem Header="Заказы">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Margin="5">--- 
+						
+					</TextBlock>
+						 <SplitButton Content="Редактировать" >
+							     <SplitButton.Flyout>
+								 <MenuFlyout Placement="Bottom">
+									<MenuItem Header="Создать новый">
+										<!---><MenuItem Header="Договор 1 от 20.03.2023" />
+										<MenuItem Header="Договор 2 от 22.03.2023" />
+										<MenuItem Header="Диаметр 3 от 29.03.2023" /> -->
+									</MenuItem>
+									<MenuItem Header="Изменить имеющийся"											  
+											  InputGesture="Ctrl+A" />
+									<MenuItem Header="Еще что-нибудь..." />
+								    </MenuFlyout>
+							        </SplitButton.Flyout>
+						            </SplitButton> 
+						<Button Margin="5">Вернуться к дате</Button>
+						<Button Margin="5">Создать</Button>
+					</StackPanel>
+					
+				</TabItem>
+				<TabItem Header="Оборудование">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Margin="5">Перечень оборудования</TextBlock>
+						            <SplitButton Content="Выбрать" >
+							        <SplitButton.Flyout>
+								        <MenuFlyout Placement="Bottom">
+									    <MenuItem Header="Труба стальная">
+										<MenuItem Header="Диаметр 10" />
+										<MenuItem Header="Диаметр 20" />
+										<MenuItem Header="Диаметр 30" />
+									</MenuItem>
+									<MenuItem Header="Втулка золотая"
+											  InputGesture="Ctrl+A" />
+									<MenuItem Header="Шестерня шерстяная" />
+								    </MenuFlyout>
+						           </SplitButton.Flyout>
+						           </SplitButton>
+						<Button Margin="5">Редактировать</Button>
+						<Button Margin="5">Создать</Button>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Сотрудники">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Margin="5">Список сотрудников:</TextBlock>
+						         <SplitButton Content="Выбрать" >
+							    <SplitButton.Flyout>
+								<MenuFlyout Placement="Bottom">
+									<MenuItem Header="Иванов"> </MenuItem>
+									<MenuItem Header="Петров"> </MenuItem>											 
+									<MenuItem Header="Сидоров"></MenuItem>
+									<MenuItem Header="Иванов"> </MenuItem>
+									<MenuItem Header="Петров"> </MenuItem>											  
+									<MenuItem Header="Сидоров" />
+								   </MenuFlyout>
+							       </SplitButton.Flyout>
+						           </SplitButton>
+						<Button Margin="5">Редактировать</Button>
+						<Button Margin="5">Создать</Button>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Материалы">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Margin="5">Перечень материалов</TextBlock>
+						<TextBlock Margin="5">ВСТАВИТЬ ПОЛЕ СО СПИСКОМ</TextBlock>
+						<Button Margin="5">Редактировать</Button>
+						<Button Margin="5">Создать</Button>
+					</StackPanel>
+				</TabItem>
+			</TabControl>
+
+				<!--<TabItem Header="Добавить">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Margin="5">Перечень того, что можно добавить:</TextBlock>
+						<TextBlock Margin="5">ВСТАВИТЬ ПОЛЕ СО СПИСКОМ</TextBlock>
+						
+					</StackPanel>
+				</TabItem>
+				
+		
+
+					
         <Button x:Name="Project"
                 Content="Заказы"
                 Grid.Column="0"
