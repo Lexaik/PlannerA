@@ -27,14 +27,13 @@ public partial class MainWindow : Window
         InitializeComponent();
         // ApplyStyles();
 
-        InitializeComponent();
 #if DEBUG
         this.AttachDevTools();
 #endif
 
     }
 
-
+    
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
@@ -71,7 +70,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private void UseInDiagramButton_Click(object sender, RoutedEventArgs e)
+    private void AddNewComponentButton_Click(object sender, RoutedEventArgs e)
     {
         var selectedItem = MaterialsList.SelectedItem as ListBoxItem;
         if (selectedItem != null)
@@ -79,8 +78,8 @@ public partial class MainWindow : Window
             // Логика использования в диаграмме
             // MessageBox.Show($"Использование в диаграмме: {selectedItem.Content}");
         }
-    }
-
+    } 
+    
 }
 
 
