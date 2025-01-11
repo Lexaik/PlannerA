@@ -9,8 +9,11 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="PlannerA">
 
+	
+	
 	<StackPanel Orientation="Vertical">
 		<Grid>
+			
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
@@ -28,21 +31,23 @@
 					<TabItem Header="Заказы">
 						<StackPanel Orientation="Vertical">
 							<TextBlock Margin="5">Перечень заказов</TextBlock>
-							<SplitButton Content="Выбрать" >
-								<SplitButton.Flyout>
-									<MenuFlyout Placement="Bottom">
-										<MenuItem Header="Труба стальная 1000 штук">
-											<MenuItem Header="Договор 1 от 20.03.2023" />
-											<MenuItem Header="Договор 2 от 22.03.2023" />
-											<MenuItem Header="Диаметр 3 от 29.03.2023" />
-										</MenuItem>
-										<MenuItem Header="Втулка золотая 1 штука"
-												  InputGesture="Ctrl+A" />
-										<MenuItem Header="Шестерня шерстяная 10 штук" />
-									</MenuFlyout>
-								</SplitButton.Flyout>
-							</SplitButton>
-							<Button Margin="5">Редактировать</Button>
+							<ListBox x:Name="Orders" Margin="5" Height="200" SelectionMode="Single">
+								<ListBoxItem>Заказ 1</ListBoxItem>
+								<ListBoxItem>Заказ 2</ListBoxItem>
+								<ListBoxItem>Заказ 3</ListBoxItem>
+								<ListBoxItem>Заказ 4</ListBoxItem>
+								<ListBoxItem>Заказ 5</ListBoxItem>
+								<ListBoxItem>Заказ 6</ListBoxItem>
+								<ListBoxItem>Заказ 7</ListBoxItem>
+								<ListBoxItem>Заказ 8</ListBoxItem>
+								<ListBoxItem>Заказ 9</ListBoxItem>
+							</ListBox>
+							<StackPanel Orientation="Horizontal">
+								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
+								<Button Margin="5" Click="AddNewComponentButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
+								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
+							</StackPanel>
 						</StackPanel>
 					</TabItem>
 
@@ -51,19 +56,19 @@
 						<StackPanel Orientation="Vertical">
 							<TextBlock Margin="5">Перечень оборудования</TextBlock>
 							<ListBox x:Name="Equipment" Margin="5" Height="200" SelectionMode="Single">
-								<ListBoxItem> 1</ListBoxItem>
-								<ListBoxItem> 2</ListBoxItem>
-								<ListBoxItem> 3</ListBoxItem>
-								<ListBoxItem> 4</ListBoxItem>
-								<ListBoxItem> 5</ListBoxItem>
-								<ListBoxItem> 6</ListBoxItem>
-								<ListBoxItem> 7</ListBoxItem>
-								<ListBoxItem> 8</ListBoxItem>
-								<ListBoxItem> 9</ListBoxItem>
+								<ListBoxItem>Оборудование 1</ListBoxItem>
+								<ListBoxItem>Оборудование 2</ListBoxItem>
+								<ListBoxItem>Оборудование 3</ListBoxItem>
+								<ListBoxItem>Оборудование 4</ListBoxItem>
+								<ListBoxItem>Оборудование 5</ListBoxItem>
+								<ListBoxItem>Оборудование 6</ListBoxItem>
+								<ListBoxItem>Оборудование 7</ListBoxItem>
+								<ListBoxItem>Оборудование 8</ListBoxItem>
+								<ListBoxItem>Оборудование 9</ListBoxItem>
 							</ListBox>
 							<StackPanel Orientation="Horizontal">
 								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
-								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="AddNewComponentButton_Click">Добавить новый компонент</Button>
 								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
 								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
 							</StackPanel>
@@ -74,19 +79,19 @@
 						<StackPanel Orientation="Vertical">
 							<TextBlock Margin="5">Перечень сотрудников</TextBlock>
 							<ListBox x:Name="Staff" Margin="5" Height="200" SelectionMode="Single">
-								<ListBoxItem> 1</ListBoxItem>
-								<ListBoxItem> 2</ListBoxItem>
-								<ListBoxItem> 3</ListBoxItem>
-								<ListBoxItem> 4</ListBoxItem>
-								<ListBoxItem> 5</ListBoxItem>
-								<ListBoxItem> 6</ListBoxItem>
-								<ListBoxItem> 7</ListBoxItem>
-								<ListBoxItem> 8</ListBoxItem>
-								<ListBoxItem> 9</ListBoxItem>
+								<ListBoxItem>Сотрудник 1</ListBoxItem>
+								<ListBoxItem>Сотрудник 2</ListBoxItem>
+								<ListBoxItem>Сотрудник 3</ListBoxItem>
+								<ListBoxItem>Сотрудник 4</ListBoxItem>
+								<ListBoxItem>Сотрудник 5</ListBoxItem>
+								<ListBoxItem>Сотрудник 6</ListBoxItem>
+								<ListBoxItem>Сотрудник 7</ListBoxItem>
+								<ListBoxItem>Сотрудник 8</ListBoxItem>
+								<ListBoxItem>Сотрудник 9</ListBoxItem>
 							</ListBox>
 							<StackPanel Orientation="Horizontal">
 								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
-								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="AddNewComponentButton_Click">Добавить новый компонент</Button>
 								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
 								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
 							</StackPanel>
@@ -109,15 +114,14 @@
 							</ListBox>
 							<StackPanel Orientation="Horizontal">
 								<Button Margin="5" Click="SelectButton_Click">Выбрать</Button>
-								<Button Margin="5" Click="UseInDiagramButton_Click">Добавить новый компонент</Button>
+								<Button Margin="5" Click="AddNewComponentButton_Click">Добавить новый компонент</Button>
 								<Button Margin="5" Click="EditButton_Click">Редактировать</Button>
 								<Button Margin="5" Click="DeleteButton_Click" Background="Red">Удалить</Button>
 							</StackPanel>
 						</StackPanel>
 					</TabItem>
 
-
-					<!--	
+					<!--
 			<Grid ShowGridLines="True">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="100"/>
@@ -284,9 +288,12 @@
 						   Background="SkyBlue"
 						   MouseDown="DayButton_MouseDown"/>
 
-			    </Grid> -->
+				  </Grid> -->
+				  
+					
 				</TabControl>
-			</StackPanel>
+			</StackPanel> 
+			
 		</Grid>
 
 	</StackPanel>
