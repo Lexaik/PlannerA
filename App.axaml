@@ -3,12 +3,10 @@
              x:Class="PlannerA.App"
              xmlns:local="using:PlannerA"
              RequestedThemeVariant="Default">
-             
-	
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
-  
+
     <Application.Styles>
 		<FluentTheme>
 			<FluentTheme.Palettes>

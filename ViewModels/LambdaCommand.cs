@@ -5,8 +5,8 @@ namespace PlannerA.ViewModels;
 
 public class LambdaCommand : ICommand
 {
-    private readonly Action<object?> _execute;
     private readonly Predicate<object?> _canExecute;
+    private readonly Action<object?> _execute;
 
     public LambdaCommand(Action<object?> execute, Predicate<object?>? canExecute = null)
     {
