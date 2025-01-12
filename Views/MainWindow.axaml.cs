@@ -11,8 +11,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        ApplyStyles();
-    }
 
     private void InitializeComponent()
     {
@@ -56,9 +54,6 @@ namespace PlannerA.Views;
 public partial class MainWindow : Window
 {
 
-    public MainWindow()
-    {
-        InitializeComponent();
-    }
+
 }
 */
