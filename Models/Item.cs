@@ -10,10 +10,13 @@ public class Item
 
     public Item(string name)
     {
-     this.Name = name;
-     SubItems = new Dictionary<Item, int>();
-     Process = new List<Operation>();
+        Name = name;
+        SubItems = new Dictionary<Item, int>();
+        Process = new List<Operation>();
     }
+    
+    
+
     public void AddSubItems(Item item, int quantity)
     {
         SubItems[item] = quantity;

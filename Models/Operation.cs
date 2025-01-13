@@ -8,11 +8,11 @@ public class Operation
     public string Type { get; set; }
     public DateTime DateStart { get; set; }
     public DateTime DateExecute { get; set; }
-
     public Operation(string name, string type, DateTime dateStart, DateTime dateExecute)
     {
-        this.Name = name;
-        this.Type = type;
-        
+        Name = name;
+        Type = type;
     }
+
+    
 }
