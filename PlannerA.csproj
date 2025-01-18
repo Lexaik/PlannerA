@@ -26,4 +26,8 @@
         <PackageReference Include="Northwoods.GoDiagram.Avalonia" Version="10.0.12" />
         <PackageReference Include="ReactiveUI.Fody" Version="19.5.41"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Models\DataContent.cs" />
+    </ItemGroup>
 </Project>

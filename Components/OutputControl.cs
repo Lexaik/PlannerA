@@ -1,5 +1,3 @@
 ﻿namespace PlannerA.Components;
 
-public class OutputControl
-{
-}
+public class OutputControl;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using PlannerA.Models;
+
+namespace PlannerA.Models;
 
 public class Factory
 {
@@ -18,7 +19,7 @@ public class Factory
         Orders = new List<Order>();
     }
 
-   public void AddEmployee(Worker worker)
+    public void AddEmployee(Worker worker)
     {
         Employee.Add(worker);
     }

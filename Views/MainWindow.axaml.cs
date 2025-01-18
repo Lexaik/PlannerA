@@ -11,6 +11,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+    }
 
     private void InitializeComponent()
     {
@@ -46,14 +47,7 @@ public partial class MainWindow : Window
     }
 }
 
-/*
-using Avalonia.Controls;
-
-namespace PlannerA.Views;
-
-public partial class MainWindow : Window
-{
 
 
-}
-*/
+
+
