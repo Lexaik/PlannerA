@@ -1,51 +1,16 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Avalonia.Media;
-using Avalonia.Styling;
 
 namespace PlannerA.Views;
 
-public partial class MainWindow : Window
-{
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
-    }
-
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
-
-    private void ApplyStyles()
-    {
-        var buttonStyle = new Style(x => x.OfType<Button>())
+        public MainWindow()
         {
-            Setters =
-            {
-                new Setter(FontFamilyProperty, new FontFamily("Verdana")),
-                new Setter(BackgroundProperty, Brushes.LightSteelBlue),
-                new Setter(ForegroundProperty, Brushes.Black),
-                new Setter(MarginProperty, new Thickness(0))
-            }
-        };
-
-        var labelStyle = new Style(x => x.OfType<Label>())
-        {
-            Setters =
-            {
-                new Setter(FontFamilyProperty, new FontFamily("Verdana")),
-                new Setter(BackgroundProperty, Brushes.LightSkyBlue),
-                new Setter(ForegroundProperty, Brushes.Black),
-                new Setter(MarginProperty, new Thickness(0))
-            }
-        };
-
-        Styles.Add(buttonStyle);
-        Styles.Add(labelStyle);
+            InitializeComponent();
+        }
+        
     }
-}
+
 
 
 
