@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace PlannerA.ViewModels;
+namespace PlannerA;
+
 
 public class LambdaCommand : ICommand
 {
@@ -35,3 +36,4 @@ public abstract class CommandManager
 {
     public static EventHandler? RequerySuggested { get; set; }
 }
+
