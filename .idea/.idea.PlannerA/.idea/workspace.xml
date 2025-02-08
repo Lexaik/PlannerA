@@ -8,19 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbb66a7-47e6-43d2-bdeb-dbc2ecd1cdd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ViewModels/DataRow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Person.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlannerA.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PlannerA.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewLocator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/Gantt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/LambdaCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/LambdaCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/ViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/ViewModelBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainWindow.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Styles.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Styles.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +111,7 @@
       <workItem from="1737893231937" duration="8293000" />
       <workItem from="1738138565020" duration="6247000" />
       <workItem from="1738314038978" duration="664000" />
-      <workItem from="1738647686129" duration="8126000" />
+      <workItem from="1738647686129" duration="36339000" />
     </task>
     <task id="LOCAL-00001" summary="починил">
       <option name="closed" value="true" />
@@ -146,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737258786678</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Создал таблицу визуализации данных.">
+      <option name="closed" value="true" />
+      <created>1738684991695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738684991695</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +168,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="починил" />
     <MESSAGE value="пробую использовать Datagrid" />
-    <option name="LAST_COMMIT_MESSAGE" value="пробую использовать Datagrid" />
+    <MESSAGE value="Создал таблицу визуализации данных." />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал таблицу визуализации данных." />
   </component>
 </project>

@@ -2,22 +2,36 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Reactive.Linq;
 using PlannerA.Models;
+using ReactiveUI.Fody.Helpers;
 
 namespace PlannerA.ViewModels;
 
-public class MainWindowViewModel : INotifyPropertyChanged
+public class MainWindowViewModel : ViewModelBase
 {
-    public DateOnly _currentDate;
-    public ObservableCollection<DataRow> _rows;
-    public ObservableCollection<DateOnly> _dates;
+    public DateOnly current_date;
+    public ObservableCollection<DataRow> rows;
+    public ObservableCollection<DateOnly> dates;
+    
+    [Reactive] public string? selected_content { get; set; }
+    public ObservableCollection<string> contents { get; set; } = [];
+    
+    
 
     public MainWindowViewModel()
     {
-        _currentDate = DateOnly.FromDateTime(DateTime.Today);
-        _rows = new ObservableCollection<DataRow>();
-        _dates = new ObservableCollection<DateOnly>();
-        Orders = new List<Order>
+        current_date = DateOnly.FromDateTime(DateTime.Today);
+        rows = new ObservableCollection<DataRow>();
+        dates = new ObservableCollection<DateOnly>();
+        
+        contents.Add("Заказы");
+        contents.Add("Оборудование");
+        contents.Add("Сотрудники");
+        contents.Add("Материалы");
+        selected_content = contents[1];
+        
+        Orders = new List<Order>()
         {
             new Order
             {
@@ -43,7 +57,7 @@ public class MainWindowViewModel : INotifyPropertyChanged
             {
                 name = "Заказ 6", date_start = new DateOnly(2025, 02, 16), date_end = new DateOnly(2025, 02, 19)
             },
-            
+
         };
         UpdateDates();
         UpdateRows();
@@ -52,20 +66,20 @@ public class MainWindowViewModel : INotifyPropertyChanged
 
     public ObservableCollection<DataRow> Rows
     {
-        get => _rows;
+        get => rows;
         set
 
         {
-            _rows = value;
+            rows = value;
             OnPropertyChanged(nameof(Rows));
         }
     }
     public ObservableCollection<DateOnly> Dates
     {
-        get => _dates;
+        get => dates;
         set
         {
-            _dates = value;
+            dates = value;
             OnPropertyChanged(nameof(Dates));
         }
     }
@@ -74,7 +88,7 @@ public class MainWindowViewModel : INotifyPropertyChanged
         Dates.Clear();
         for (int i = -3; i < 21; i++)
         {
-            Dates.Add(_currentDate.AddDays(i));
+            Dates.Add(current_date.AddDays(i));
         }
     }
     private void UpdateRows()
@@ -99,25 +113,53 @@ public class MainWindowViewModel : INotifyPropertyChanged
     
     public void ScrollForward()
     {
-        _currentDate = _currentDate.AddDays(1);
+        current_date = current_date.AddDays(1);
         UpdateDates();
         UpdateRows();
     }
     public void SetToday()
     {
-        _currentDate = DateOnly.FromDateTime(DateTime.Today);
+        current_date = DateOnly.FromDateTime(DateTime.Today);
         UpdateDates();
         UpdateRows();
     }
     public void ScrollBackward()
     {
-        _currentDate = _currentDate.AddDays(-1);
+        current_date = current_date.AddDays(-1);
         UpdateDates();
         UpdateRows();
     }
     public void ScrollWeek()
     {
-        _currentDate = _currentDate.AddDays(7);
+        current_date = current_date.AddDays(7);
+        UpdateDates();
+        UpdateRows();
+    }
+    
+    public void SelectOrders()
+    {
+        selected_content = contents[0];
+        UpdateDates();
+        UpdateRows();
+    }
+    
+    public void SelectMachinerys()
+    {
+        selected_content = contents[1];
+        UpdateDates();
+        UpdateRows();
+    }
+    
+    public void SelectEmployees()
+    {
+        selected_content = contents[2];
+        UpdateDates();
+        UpdateRows();
+    }
+    
+    public void SelectMaterials()
+    {
+        selected_content = contents[3];
         UpdateDates();
         UpdateRows();
     }

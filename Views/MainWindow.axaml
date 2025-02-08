@@ -6,49 +6,53 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="PlannerA">
     
-    
-    <Design.DataContext>
+    <Window.DataContext>
         <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    </Window.DataContext>
     <StackPanel Orientation="Vertical">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                <Button Content="Назад" Command="{Binding ScrollBackward}" />
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                <Button Content="День -" Command="{Binding ScrollBackward}" />
                 <Button Content="Сегодня" Command="{Binding SetToday}" />
-                <Button Content="Вперёд" Command="{Binding ScrollForward}" />
-                <Button Content="+ неделя" Command="{Binding ScrollWeek}" />
-            </StackPanel>
-            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                <Button Content="Заказы"/>
-                <Button Content="Оборудование"/>
-                <Button Content="Сотрудники"/>
-                <Button Content="Материалы"/>
-            </StackPanel>
-        </DockPanel>
-        <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[0]}" Binding="{Binding status[0]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[1]}" Binding="{Binding status[1]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[2]}" Binding="{Binding status[2]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[3]}" Binding="{Binding status[3]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[4]}" Binding="{Binding status[4]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[5]}" Binding="{Binding status[5]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[6]}" Binding="{Binding status[6]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[7]}" Binding="{Binding status[7]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[8]}" Binding="{Binding status[8]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[9]}" Binding="{Binding status[9]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[10]}" Binding="{Binding status[10]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[11]}" Binding="{Binding status[11]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[12]}" Binding="{Binding status[12]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[13]}" Binding="{Binding status[13]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[14]}" Binding="{Binding status[14]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[15]}" Binding="{Binding status[15]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[16]}" Binding="{Binding status[16]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[17]}" Binding="{Binding status[17]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[18]}" Binding="{Binding status[18]}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="{Binding Dates[19]}" Binding="{Binding status[19]}" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                <Button Content="День +" Command="{Binding ScrollForward}" />
+                <Button Content="Неделя +" Command="{Binding ScrollWeek}" />
+                </StackPanel>
+                <!--<TabControl ItemsSource="{Binding contents}"
+                            SelectedContent="{Binding selected_content}"/>-->
+                <ListBox ItemsSource="{Binding contents}"
+                         SelectedItem="{Binding selected_content}"/>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Заказы" Command="{Binding SelectOrders}" />
+                    <Button Content="Оборудование" Command="{Binding SelectMachinerys}" />
+                    <Button Content="Сотрудники" Command="{Binding SelectEmployees}" />
+                    <Button Content="Материалы" Command="{Binding SelectMaterials}" />
+                </StackPanel>
+            </DockPanel>
+        <TextBlock Text= "{Binding selected_content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{Binding selected_content}" Binding="{Binding name}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[0]}" Binding="{Binding status[0]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[1]}" Binding="{Binding status[1]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[2]}" Binding="{Binding status[2]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[3]}" Binding="{Binding status[3]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[4]}" Binding="{Binding status[4]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[5]}" Binding="{Binding status[5]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[6]}" Binding="{Binding status[6]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[7]}" Binding="{Binding status[7]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[8]}" Binding="{Binding status[8]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[9]}" Binding="{Binding status[9]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[10]}" Binding="{Binding status[10]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[11]}" Binding="{Binding status[11]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[12]}" Binding="{Binding status[12]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[13]}" Binding="{Binding status[13]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[14]}" Binding="{Binding status[14]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[15]}" Binding="{Binding status[15]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[16]}" Binding="{Binding status[16]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[17]}" Binding="{Binding status[17]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[18]}" Binding="{Binding status[18]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[19]}" Binding="{Binding status[19]}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
     </StackPanel>
 </Window>
