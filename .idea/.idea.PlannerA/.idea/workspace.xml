@@ -8,10 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbb66a7-47e6-43d2-bdeb-dbc2ecd1cdd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ViewModels/DataContent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ViewModels/Factory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Factory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Machinery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Equipment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Operation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Operation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Worker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Workers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/LambdaCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/Commands.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/ViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/ViewModelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainWindow.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +119,8 @@
       <workItem from="1738138565020" duration="6247000" />
       <workItem from="1738314038978" duration="664000" />
       <workItem from="1738647686129" duration="36339000" />
+      <workItem from="1739033367246" duration="55000" />
+      <workItem from="1739074339231" duration="15344000" />
     </task>
     <task id="LOCAL-00001" summary="починил">
       <option name="closed" value="true" />
@@ -145,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738684991695</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Решили проблему с reactive">
+      <option name="closed" value="true" />
+      <created>1739033403493</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033403493</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +186,7 @@
     <MESSAGE value="починил" />
     <MESSAGE value="пробую использовать Datagrid" />
     <MESSAGE value="Создал таблицу визуализации данных." />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал таблицу визуализации данных." />
+    <MESSAGE value="Решили проблему с reactive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Решили проблему с reactive" />
   </component>
 </project>

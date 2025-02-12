@@ -1,24 +1,16 @@
 ﻿using System.Collections.Generic;
-
 namespace PlannerA.Models;
-
-public class Item
+public class Item (string name)
 {
-    public string Name { get; set; }
-    public Dictionary<Item, int> SubItems;
-    public List<Operation> Process { get; set; }
-    public Item(string name)
+    public string name { get; set; } = name;
+    public Dictionary<Item, int> subItems { get; set;} = [];
+    public List<Operation> process { get; set; } = [];
+    public void addSubItems(Item item, int quantity)
     {
-        Name = name;
-        SubItems = new Dictionary<Item, int>();
-        Process = new List<Operation>();
+        subItems[item] = quantity;
     }
-    public void AddSubItems(Item item, int quantity)
+    public void addProcess(Operation operation)
     {
-        SubItems[item] = quantity;
-    }
-    public void AddProcess(Operation operation)
-    {
-        Process.Add(operation);
+        process.Add(operation);
     }
 }

@@ -5,20 +5,17 @@ using System.ComponentModel;
 using System.Reactive.Linq;
 using PlannerA.Models;
 using ReactiveUI.Fody.Helpers;
-
 namespace PlannerA.ViewModels;
+
+
 
 public class MainWindowViewModel : ViewModelBase
 {
-    public DateOnly current_date;
-    public ObservableCollection<DataRow> rows;
-    public ObservableCollection<DateOnly> dates;
-    
+    public static DateOnly current_date;
+    public static ObservableCollection<DataRow> rows;
+    public static ObservableCollection<DateOnly> dates;
     [Reactive] public string? selected_content { get; set; }
     public ObservableCollection<string> contents { get; set; } = [];
-    
-    
-
     public MainWindowViewModel()
     {
         current_date = DateOnly.FromDateTime(DateTime.Today);
@@ -29,11 +26,11 @@ public class MainWindowViewModel : ViewModelBase
         contents.Add("Оборудование");
         contents.Add("Сотрудники");
         contents.Add("Материалы");
-        selected_content = contents[1];
+        selected_content = contents[0];
         
-        Orders = new List<Order>()
+        //Orders = new List<Order>()
         {
-            new Order
+            /*new Order
             {
                 name = "Заказ 1", date_start = new DateOnly(2025, 02, 03), date_end = new DateOnly(2025, 02, 08),
             },
@@ -56,13 +53,13 @@ public class MainWindowViewModel : ViewModelBase
             new Order
             {
                 name = "Заказ 6", date_start = new DateOnly(2025, 02, 16), date_end = new DateOnly(2025, 02, 19)
-            },
+            },*/
 
         };
         UpdateDates();
         UpdateRows();
     }
-    public List<Order> Orders { get; set; }
+    //public List<Order> Orders { get; set; }
 
     public ObservableCollection<DataRow> Rows
     {
@@ -83,7 +80,7 @@ public class MainWindowViewModel : ViewModelBase
             OnPropertyChanged(nameof(Dates));
         }
     }
-    private void UpdateDates()
+    private static void UpdateDates()
     {
         Dates.Clear();
         for (int i = -3; i < 21; i++)
@@ -91,10 +88,10 @@ public class MainWindowViewModel : ViewModelBase
             Dates.Add(current_date.AddDays(i));
         }
     }
-    private void UpdateRows()
+    private static void UpdateRows()
     {
         Rows.Clear();
-        foreach (var order in Orders)
+        foreach (var order in orders)
         {
             var row = new DataRow(order.name)
             {
@@ -111,30 +108,7 @@ public class MainWindowViewModel : ViewModelBase
         }
     }
     
-    public void ScrollForward()
-    {
-        current_date = current_date.AddDays(1);
-        UpdateDates();
-        UpdateRows();
-    }
-    public void SetToday()
-    {
-        current_date = DateOnly.FromDateTime(DateTime.Today);
-        UpdateDates();
-        UpdateRows();
-    }
-    public void ScrollBackward()
-    {
-        current_date = current_date.AddDays(-1);
-        UpdateDates();
-        UpdateRows();
-    }
-    public void ScrollWeek()
-    {
-        current_date = current_date.AddDays(7);
-        UpdateDates();
-        UpdateRows();
-    }
+    
     
     public void SelectOrders()
     {

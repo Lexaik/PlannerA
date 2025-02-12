@@ -1,18 +1,9 @@
 ﻿using System;
-
 namespace PlannerA.Models;
-
-public class Operation
+public class Operation (string name, string type, DateTime dateStart, DateTime dateExecute)
 {
-    public string Name { get; set; }
-    public string Type { get; set; }
-    public DateTime DateStart { get; set; }
-    public DateTime DateExecute { get; set; }
-    public Operation(string name, string type, DateTime dateStart, DateTime dateExecute)
-    {
-        Name = name;
-        Type = type;
-    }
-
-    
+    public string name { get; set; } = name;
+    public string type { get; set; } = type;
+    public DateTime dateStart { get; set; } = dateStart;
+    public DateTime dateExecute { get; set; } = dateExecute;
 }
