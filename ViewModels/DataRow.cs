@@ -2,13 +2,8 @@ using System.Collections.Generic;
 
 namespace PlannerA.ViewModels;
 
-public class DataRow
+public class DataRow(string x)
 {
-    public required string name { get; set ; }
+    public string name { get; set ; }= x;
     public List<string> status { get; set; }
-
-    public DataRow(string x)
-    {
-        name = x;
-    }
 }

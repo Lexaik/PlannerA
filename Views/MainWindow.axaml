@@ -10,25 +10,23 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <StackPanel Orientation="Vertical">
-            <DockPanel>
-                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                <Button Content="День -" Command="{Binding ScrollBackward}" />
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                <Button Content="- День" Command="{Binding ScrollBackward}" />
                 <Button Content="Сегодня" Command="{Binding SetToday}" />
-                <Button Content="День +" Command="{Binding ScrollForward}" />
-                <Button Content="Неделя +" Command="{Binding ScrollWeek}" />
-                </StackPanel>
-                <!--<TabControl ItemsSource="{Binding contents}"
-                            SelectedContent="{Binding selected_content}"/>-->
-                <ListBox ItemsSource="{Binding contents}"
-                         SelectedItem="{Binding selected_content}"/>
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Заказы" Command="{Binding SelectOrders}" />
-                    <Button Content="Оборудование" Command="{Binding SelectMachinerys}" />
-                    <Button Content="Сотрудники" Command="{Binding SelectEmployees}" />
-                    <Button Content="Материалы" Command="{Binding SelectMaterials}" />
-                </StackPanel>
-            </DockPanel>
-        <TextBlock Text= "{Binding selected_content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="+ День" Command="{Binding ScrollForward}" />
+                <Button Content="+ Неделя" Command="{Binding ScrollWeek}" />
+            </StackPanel>
+                <ListBox DockPanel.Dock="Right" HorizontalAlignment="Right"
+                    ItemsSource="{Binding contents}"
+                    SelectedItem="{Binding selected_content}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+        </DockPanel>
                 <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{Binding selected_content}" Binding="{Binding name}" IsReadOnly="True"/>
