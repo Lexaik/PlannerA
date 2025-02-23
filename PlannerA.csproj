@@ -22,7 +22,8 @@
             <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.2" />
-        <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.3"/>
+        <PackageReference Include="Northwoods.GoDiagram.Avalonia" Version="10.0.12" />
+        <PackageReference Include="ReactiveUI.Fody" Version="19.5.41"/>
     </ItemGroup>
 </Project>
