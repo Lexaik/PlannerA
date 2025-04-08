@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+             
+             x:Class="PlannerA.Desktop.Views.MainPageView"
+             x:DataType="vm:MainPageViewModel">
+    <UserControl.DataContext>
+        <vm:MainPageViewModel/>
+    </UserControl.DataContext>
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <DataGrid AutoGenerateColumns="True"
+                  ItemsSource="{Binding Orders}"/>
+    </DockPanel>
+</UserControl>

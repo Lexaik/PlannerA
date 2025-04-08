@@ -1,6 +1,8 @@
 ﻿using System;
 using Avalonia;
 using Avalonia.ReactiveUI;
+using Microsoft.EntityFrameworkCore;
+using PlannerA.Models;
 
 namespace PlannerA;
 abstract class Program
@@ -17,4 +19,8 @@ abstract class Program
             .WithInterFont()
             .LogToTrace()
             .UseReactiveUI();
+
+    
+
+
 }

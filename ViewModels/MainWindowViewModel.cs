@@ -4,7 +4,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using DynamicData;
+using DynamicData.Binding;
 using PlannerA.Models;
+using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 namespace PlannerA.ViewModels;
@@ -13,9 +15,9 @@ public class MainWindowViewModel : ViewModelBase
 {
     public MainWindowViewModel()
     {
-        current_date = DateOnly.FromDateTime(DateTime.Today);
+        current_date = DateTime.Today;
         rows = new ObservableCollection<DataRow>();
-        dates = new ObservableCollection<DateOnly>();
+        dates = new ObservableCollection<DateTime>();
 
         contents.Add("Заказы");
         contents.Add("Оборудование");
@@ -25,66 +27,67 @@ public class MainWindowViewModel : ViewModelBase
         
         aurora = new Factory("Aurora");
         
-        item1 = new("Труба");
-        item2 = new("Лист");
-        item3 = new("Переход");
-        item4 = new("Отвод");
-        item5 = new("Фланец");
+        Item item1 = new("Труба");
+        Item item2 = new("Лист");
+        Item item3 = new("Переход");
+        Item item4 = new("Отвод");
+        Item item5 = new("Фланец");
         
-        item0100 = new("Распылитель 01.00");
-        item0101 = new("Форсунка 01.01");
-        item0102 = new("Штуцер 01.02");
-        item0200 = new("Огнепреградитель 02.00");
-        item0201 = new("Корпус 02.01");
-        item0202 = new("Вставка 02.02");
+        Item item0100 = new("Распылитель 01.00");
+        Item item0101 = new("Форсунка 01.01");
+        Item item0102 = new("Штуцер 01.02");
+        Item item0200 = new("Огнепреградитель 02.00");
+        Item item0201 = new("Корпус 02.01");
+        Item item0202 = new("Вставка 02.02");
         
-        operation1 = new("Поставка", "Снабжение", new TimeSpan (20,0,0,0));
-        operation2 = new("Отрезка", "Слесарная", new TimeSpan (0,20,0));
-        operation3 = new("Точение", "Токарная", new TimeSpan (0,10,0));
-        operation4 = new("Фрезерование", "Фрезерная", new TimeSpan (30,0,0));
-        operation5 = new("Сварка", "Сварочная", new TimeSpan (0,40,0));
-        operation6 = new("Сборка", "Слесарная", new TimeSpan (0,15,0));
+        Operation operation1 = new("Поставка", "снабжение", new TimeSpan (20,0,0,0));
+        Operation operation2 = new("Отрезка", "слесарная", new TimeSpan (0,20,0));
+        Operation operation3 = new("Точение", "токарная", new TimeSpan (0,10,0));
+        Operation operation4 = new("Фрезерование", "фрезерная", new TimeSpan (30,0,0));
+        Operation operation5 = new("Сварка", "сварочная", new TimeSpan (0,40,0));
+        Operation operation6 = new("Сборка", "слесарная", new TimeSpan (0,15,0));
 
-        order0001 = new("лукоил_0001", new DateOnly(2025, 2, 16), new DateOnly(2025,03, 20));
-        order0002 = new("газпром_0002", new DateOnly(2025, 2, 19), new DateOnly(2025,04, 10));
-        order0003 = new("транснефть_0003", new DateOnly(2025, 2, 26), new DateOnly(2025,05, 30));
+        Order order0001 = new("лукоил_0001", new DateTime(2025, 2, 16), new DateTime(2025,03, 20));
+        Order order0002 = new("газпром_0002", new DateTime(2025, 2, 19), new DateTime(2025,04, 10));
+        Order order0003 = new("транснефть_0003", new DateTime(2025, 2, 26), new DateTime(2025,05, 30));
         
-        machinery1 = new("16К20", "токарный");
-        machinery2 = new("ВМ125м", "фрезерный");
-        machinery3 = new("Ресанта 250А", "Сварочный аппарат");
-        machinery4 = new("Набор ключей", "Слесарный инструмент");
-        machinery5 = new("Опрессовщик", "Слесарный инструмент");
+        Equipment machinery1 = new("16К20", "токарная");
+        Equipment machinery2 = new("ВМ125м", "фрезерная");
+        Equipment machinery3 = new("Ресанта 250А", "сварочная");
+        Equipment machinery4 = new("Набор ключей", "слесарная");
+        Equipment machinery5 = new("Опрессовщик", "слесарная");
+        Equipment machinery6 = new("Транспортная компания", "снабжение");
 
-        worker1 = new("Василий Васильев", "Токарь");
-        worker2 = new("Иван Иванов", "Фрезеровщик");
-        worker3 = new("Сергей Сергеев", "Сварщик");
-        worker4 = new("Александр Александров", "Слесарь");
-        worker5 = new("Андрей Андреев", "Слесарь");
+        Workers worker1 = new("Василий Васильев", "токарная");
+        Workers worker2 = new("Иван Иванов", "фрезерная");
+        Workers worker3 = new("Сергей Сергеев", "сварочная");
+        Workers worker4 = new("Александр Александров", "слесарная");
+        Workers worker5 = new("Андрей Андреев", "снабжение");
         
         item0101.addSubItems(item1, 1);
-        item0101.addProcess(operation2);
-        item0101.addProcess(operation3);
-        item0101.addProcess(operation4);
+        item0101.addOperation(operation2);
+        item0101.addOperation(operation3);
+        item0101.addOperation(operation4);
         item0102.addSubItems(item1, 1);
-        item0102.addProcess(operation2);
-        item0102.addProcess(operation3);
+        item0102.addOperation(operation2);
+        item0102.addOperation(operation3);
         item0100.addSubItems(item0101, 1);
         item0100.addSubItems(item0102, 1);
-        item0100.addProcess(operation6);
+        item0100.addOperation(operation6);
         item0201.addSubItems(item5, 2);
         item0201.addSubItems(item3, 1);
-        item0201.addProcess(operation5);
+        item0201.addOperation(operation5);
         item0202.addSubItems(item1, 1);
-        item0202.addProcess(operation2);
-        item0202.addProcess(operation3);
+        item0202.addOperation(operation2);
+        item0202.addOperation(operation3);
         item0200.addSubItems(item0202, 1);
         item0200.addSubItems(item0201, 2);
-        item0200.addProcess(operation6);
+        item0200.addOperation(operation6);
         
-        order0001.addProducts(item0100, 100);
-        order0001.addProducts(item0200, 10);
-        order0002.addProducts(item0100, 50);
-        order0003.addProducts(item0200, 30);
+        order0001.addProducts(item0100, 1000);
+        order0001.addProducts(item0200, 10000);
+        order0002.addProducts(item0100, 5000);
+        order0003.addProducts(item0200, 3000);
 
         aurora.addEmployee(worker1);
         aurora.addEmployee(worker2);
@@ -97,6 +100,7 @@ public class MainWindowViewModel : ViewModelBase
         aurora.addEquipment(machinery3);
         aurora.addEquipment(machinery4);
         aurora.addEquipment(machinery5);
+        aurora.addEquipment(machinery6);
 
         aurora.addInventories(item1, 10);
         aurora.addInventories(item2, 3);
@@ -110,57 +114,18 @@ public class MainWindowViewModel : ViewModelBase
         
         UpdateDates();
         UpdateRows();
+        DataProcess.UpdateProcesses();
+
+        this.WhenValueChanged(vm => vm.selected_content).Subscribe(p=>UpdateRows());
     }
     
-    public static DateOnly current_date;
+    public static DateTime current_date;
     public static ObservableCollection<DataRow> rows;
-    public static ObservableCollection<DateOnly> dates;
+    public static ObservableCollection<DateTime> dates;
     public ObservableCollection<string> contents { get; set; } = [];
     [Reactive] public string? selected_content { get; set; }
+
     public static Factory aurora { get; set;}
-    
-    Item item1;
-    Item item2;
-    Item item3;
-    Item item4;
-    Item item5;
-        
-    Item item0100;
-    Item item0101;
-    Item item0102;
-    Item item0200;
-    Item item0201;
-    Item item0202;
-        
-    Operation operation1;
-    Operation operation2;
-    Operation operation3;
-    Operation operation4;
-    Operation operation5;
-    Operation operation6;
-
-    Order order0001;
-    Order order0002;
-    Order order0003;
-        
-    Equipment machinery1;
-    Equipment machinery2;
-    Equipment machinery3;
-    Equipment machinery4;
-    Equipment machinery5;
-
-    Workers worker1;
-    Workers worker2;
-    Workers worker3;
-    Workers worker4;
-    Workers worker5;
-        
-    /*public static string work = "слесарь";
-    public List<Workers> foundWorker = aurora.employee.Where(x => x.name.Contains(work)).ToList();
-    public static string search_opp = "Токарная";
-    public static List<char>resultOpp = aurora.orders.SelectMany(a => a.products)
-        .SelectMany(b => b.Key.process)
-        .SelectMany(c => c.type).ToList();*/
     
     public ObservableCollection<DataRow> Rows
     {
@@ -171,7 +136,7 @@ public class MainWindowViewModel : ViewModelBase
             OnPropertyChanged(nameof(rows));
         }
     }
-    public ObservableCollection<DateOnly> Dates
+    public ObservableCollection<DateTime> Dates
     {
         get => dates;
         set
@@ -183,31 +148,86 @@ public class MainWindowViewModel : ViewModelBase
     private static void UpdateDates()
     {
         dates.Clear();
-        for (int i = -3; i < 21; i++)
+        for (int i = -3; i < 7; i++)
         {
             dates.Add(current_date.AddDays(i));
         }
     }
-    private static void UpdateRows()
+    private void UpdateRows()
     {
         rows.Clear();
-        foreach (var order in aurora.orders)
+        switch (selected_content)
         {
-            var row = new DataRow(order.name)
-            {
-                name = order.name,
-                status = new List<string>(),
-            };
-            foreach (var date in dates)
-            {
-                if (date >= order.date_start && date <= order.date_end)
-                    row.status.Add("В работе");
-                else row.status.Add("");
-            };
-            rows.Add(row);
+            case "Заказы":
+                foreach (var order in aurora.orders)
+                {
+                    var row = new DataRow(order.name)
+                    {
+                        name = order.name,
+                        status = new List<string>(),
+                    };
+                    foreach (var date in dates)
+                    {
+                        if (date >= order.date_start && date <= order.date_end)
+                            row.status.Add("В работе");
+                        else row.status.Add("");
+                    };
+                    rows.Add(row);
+                }
+                break;
+            case "Оборудование":
+                foreach (var equipment in aurora.equipments)
+                {
+                    var row = new DataRow(equipment.name)
+                    {
+                        name = equipment.name,
+                        status = new List<string>(),
+                    };
+                    foreach (var date in dates)
+                    {
+                        var proc = equipment.loading.Where(x => x.date_start <= date && x.date_end >= date).FirstOrDefault();
+                        if ( proc != null ) row.status.Add(proc.order+proc.operation+proc.item);
+                        else row.status.Add("");
+                    };
+                    rows.Add(row);
+                }
+                break;
+           case "Сотрудники":
+                foreach (var worker in aurora.employee)
+                {
+                    var row = new DataRow(worker.name)
+                    {
+                        name = worker.name,
+                        status = new List<string>(),
+                    };
+                    foreach (var date in dates)
+                    {
+                        var proc = worker.loading.Where(x => x.date_start <= date && x.date_end >= date).FirstOrDefault();
+                        if ( proc != null ) row.status.Add(proc.order+"-"+proc.operation+"-"+proc.item);
+                        else row.status.Add("");
+                    };
+                    rows.Add(row);
+                }
+                break;
+            case "Материалы":
+                foreach (var pos in aurora.inventories)
+                {
+                    var row = new DataRow(pos.Key.name)
+                    {
+                        name = pos.Key.name,
+                        status = new List<string>(),
+                    };
+                    foreach (var date in dates)
+                    {
+                        /*if (date >= order.date_start && date <= order.date_end)
+                            row.status.Add("В работе");// Исправить на номера заказов
+                        else*/ row.status.Add("");
+                    };
+                    rows.Add(row);
+                }
+                break;
         }
     }
-    
     public void ScrollForward()
     {
         current_date = current_date.AddDays(1);
@@ -216,7 +236,7 @@ public class MainWindowViewModel : ViewModelBase
     }
     public void SetToday()
     {
-        current_date = DateOnly.FromDateTime(DateTime.Today);
+        current_date = DateTime.Today;
         UpdateDates();
         UpdateRows();
     }
@@ -232,7 +252,6 @@ public class MainWindowViewModel : ViewModelBase
         UpdateDates();
         UpdateRows();
     }
-    
     public event PropertyChangedEventHandler? PropertyChanged;
     private void OnPropertyChanged(string propertyName)
     {

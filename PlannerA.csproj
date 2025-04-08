@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.*"/>
+        <PackageReference Include="Avalonia" Version="11.2.5" />
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.*" />
         <PackageReference Include="Avalonia.Desktop" Version="11.*"/>
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.*"/>
@@ -24,7 +24,9 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.*"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
         <PackageReference Include="Northwoods.GoDiagram.Avalonia" Version="10.*" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
         <PackageReference Include="ReactiveUI.Fody" Version="19.*"/>
     </ItemGroup>
 

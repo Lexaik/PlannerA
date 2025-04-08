@@ -2,11 +2,11 @@
 namespace PlannerA.Models;
 public class Equipment(string name, string type)
 {
-    public string Name { get; set; } = name;
+    public string name { get; set; } = name;
     public string Type { get; set; } = type;
-    public List<Operation> loading { get; set;} = [];
-    public void addOperation(Operation operation)
+    public List<Process> loading { get; set;} = [];
+    public void addProcess(Process x)
     {
-        loading.Add(operation);
+        loading.Add(x);
     }
 }

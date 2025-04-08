@@ -11,13 +11,13 @@
     </Window.DataContext>
     <StackPanel Orientation="Vertical">
         <DockPanel>
-            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                 <Button Content="- День" Command="{Binding ScrollBackward}" />
                 <Button Content="Сегодня" Command="{Binding SetToday}" />
                 <Button Content="+ День" Command="{Binding ScrollForward}" />
                 <Button Content="+ Неделя" Command="{Binding ScrollWeek}" />
             </StackPanel>
-                <ListBox DockPanel.Dock="Right" HorizontalAlignment="Right"
+                <ListBox DockPanel.Dock="Left" HorizontalAlignment="Left"
                     ItemsSource="{Binding contents}"
                     SelectedItem="{Binding selected_content}">
                     <ListBox.ItemsPanel>
