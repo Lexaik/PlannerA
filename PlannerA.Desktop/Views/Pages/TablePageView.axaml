@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.TablePageView"
+             x:DataType="vm:TablePageViewModel">
+    
+    <StackPanel Orientation="Vertical">
+        <ListBox DockPanel.Dock="Right" HorizontalAlignment="Right"
+                 ItemsSource="{Binding contents}"
+                 SelectedItem="{Binding selected_content}"
+                 SelectionMode="Single"
+                 ItemTemplate="{StaticResource DataTemplatePages}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+        </ListBox>
+        <ContentControl>
+            <ContentControl Content="{Binding selected_content.PageViewModel}"/>
+        </ContentControl>
+    </StackPanel>
+</UserControl>

@@ -8,37 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32bdde5e-eaf1-41cf-b5b3-854a84004091" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Components/DateInputComponent.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Components/DateInputComponent.axaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/TablePageViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Views/Pages/TablePageView.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Views/Pages/TablePageView.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.axaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.axaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/avalonia-logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/OutputControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FodyWeavers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FodyWeavers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Equipment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Operation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Order.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Workers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlannerA.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlannerA.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PlannerA.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlannerA.sln.DotSettings.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewLocator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/DataRow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/Factory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/MainWindowViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/ViewModelBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainWindow.axaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainWindow.axaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Styles.axaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задания_и_сроки.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +26,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Lexaik"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lexaik&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Lexaik/PlannerA.git",
-    "accountId": "90ce68fb-5b59-4f4c-ab09-75547f32a2af"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lexaik/PlannerA.git&quot;,
+    &quot;accountId&quot;: &quot;90ce68fb-5b59-4f4c-ab09-75547f32a2af&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c7102cd0ffb8973777e61b1942c3fffac7e14016a511d055c3adf73ff91748/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.BLL/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.DAL/DepartmentDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.DAL/OrderDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/ClientPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/DepartmentPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/EditPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/EquipmentPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/ItemPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/OperationPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,15 +63,19 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2xPSmmH7u26jzInYBMX7a2YK0BK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.PlannerA.Desktop.executor": "Run",
+    ".NET Project.PlannerA.Desktop.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "LayersApp",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -175,7 +154,22 @@
       <workItem from="1748249198218" duration="403000" />
       <workItem from="1748249624969" duration="6359000" />
       <workItem from="1748333559416" duration="5098000" />
+      <workItem from="1748421373550" duration="2224000" />
+      <workItem from="1748439254797" duration="14611000" />
+      <workItem from="1748660488629" duration="2027000" />
+      <workItem from="1748938336032" duration="3546000" />
+      <workItem from="1748941923457" duration="12941000" />
+      <workItem from="1749483292480" duration="1250000" />
     </task>
+    <task id="LOCAL-00001" summary="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия.">
+      <option name="closed" value="true" />
+      <created>1748421540109</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748421540109</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +179,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия." />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,6 +197,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PlannerA.DAL/OrderDbContext.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\lexai\RiderProjects\PlannerA\PlannerA.DAL\OrderDbContext.cs" containingFunctionPresentation="Method 'InsertAsync'">
+            <startOffsets>
+              <option value="795" />
+            </startOffsets>
+            <endOffsets>
+              <option value="836" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
