@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.PlanPageView"
+             x:DataType="vm:PlanPageViewModel">
+    
+    <StackPanel Orientation="Vertical">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                <Button Content="Назад 1 день" Command="{Binding ScrollBackward}" />
+                <Button Content="Сегодня" Command="{Binding SetToday}" />
+                <Button Content="Вперед 1 день" Command="{Binding ScrollForward}" />
+                <Button Content="Вперед 1 неделя" Command="{Binding ScrollWeek}" />
+            </StackPanel>
+                <ListBox DockPanel.Dock="Right" HorizontalAlignment="Right"
+                    ItemsSource="{Binding contents}"
+                    SelectedItem="{Binding selected_content}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+        </DockPanel>
+                <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{Binding selected_content}" Binding="{Binding name}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[0]}" Binding="{Binding status[0]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[1]}" Binding="{Binding status[1]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[2]}" Binding="{Binding status[2]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[3]}" Binding="{Binding status[3]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[4]}" Binding="{Binding status[4]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[5]}" Binding="{Binding status[5]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[6]}" Binding="{Binding status[6]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[7]}" Binding="{Binding status[7]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[8]}" Binding="{Binding status[8]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[9]}" Binding="{Binding status[9]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[10]}" Binding="{Binding status[10]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[11]}" Binding="{Binding status[11]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[12]}" Binding="{Binding status[12]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[13]}" Binding="{Binding status[13]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[14]}" Binding="{Binding status[14]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[15]}" Binding="{Binding status[15]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[16]}" Binding="{Binding status[16]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[17]}" Binding="{Binding status[17]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[18]}" Binding="{Binding status[18]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[19]}" Binding="{Binding status[19]}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+    </StackPanel>
+</UserControl>

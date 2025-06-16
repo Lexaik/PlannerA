@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+             xmlns:c="using:PlannerA.Desktop.Components"
+             
+             x:Class="PlannerA.Desktop.Views.NewOrderPageView"
+             x:DataType="vm:NewOrderPageViewModel">
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"
+                        DataContext="{Binding order}">
+                <c:InputComponent LabelContent="Название"
+                                  InputText="{Binding name}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Клиент"
+                                  InputText="{Binding client}"
+                                  IsReadOnly="False"/>
+                
+                <c:InputComponent LabelContent="Дата поступления"
+                                  InputText="{Binding date_start}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Планируемая дата исполнения"
+                                  InputText="{Binding date_end_plan}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Фактическая дата исполнения"
+                                  InputText="{Binding date_end}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Общая стоимость"
+                                  InputText="{Binding total_cost}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Описание"
+                                  InputText="{Binding description}"
+                                  IsReadOnly="False"/>
+                <c:InputComponent LabelContent="Активный"
+                                  InputText="{Binding is_active}"
+                                  IsReadOnly="False"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Сохранить"
+                        Command="{Binding CommandSave}"/>
+                <Button Content="Очистить"
+                        Command="{Binding CommandClear}"/>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

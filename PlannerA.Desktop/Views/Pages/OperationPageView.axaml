@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.OperationPageView"
+             x:DataType="vm:OperationPageViewModel">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditOperation}"/>
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Operations}"
+                  SelectedItem="{Binding SelectedOperation}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Тип"
+                                    Binding="{Binding type}"/>
+                <DataGridTextColumn Header="Длительность"
+                                    Binding="{Binding duration}"/>
+                <DataGridTextColumn Header="Параметры"
+                                    Binding="{Binding parameters}"/>
+                <DataGridTextColumn Header="Стоимость"
+                                    Binding="{Binding cost}"/>
+                <DataGridTextColumn Header="Действующая"
+                                    Binding="{Binding is_active}"/>
+                    <!--<DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="name"/>
+                            <Binding Path="date_of_produce"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>-->
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

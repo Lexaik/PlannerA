@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.OrderPageView"
+             x:DataType="vm:OrderPageViewModel">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Добавить"
+                    Command="{Binding CommandCreateOrder}"/>
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditOrder}"/>
+            <Button Content="Копировать"
+                    Command="{Binding CommandCopyOrder}"/>
+            <Button Content="Удалить"
+                    Command="{Binding CommandDeleteOrder}"/>
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Orders}"
+                  SelectedItem="{Binding SelectedOrder}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="id"
+                                    Binding="{Binding order_id}"/>
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Клиент"
+                                    Binding="{Binding client}"/>
+                <DataGridTextColumn Header="Дата запуска"
+                                    Binding="{Binding date_start}"/>
+                <DataGridTextColumn Header="Планируемая дата окончания"
+                                    Binding="{Binding date_end_plan}"/>
+                <DataGridTextColumn Header="Дата окончания"
+                                    Binding="{Binding date_end}"/>
+                <DataGridTextColumn Header="Общая стоимость"
+                                    Binding="{Binding total_cost}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Binding="{Binding description}"/>
+                <DataGridTextColumn Header="Действующий"
+                                    Binding="{Binding is_active}"/>
+                    <!--<DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="name"/>
+                            <Binding Path="date_of_produce"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>-->
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

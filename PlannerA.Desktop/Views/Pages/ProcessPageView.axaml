@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.ProcessPageView"
+             x:DataType="vm:ProcessPageViewModel">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditProcess}"/>
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Processes}"
+                  SelectedItem="{Binding SelectedProcess}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id"
+                                    Binding="{Binding process_id}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="id заказа"
+                                    Binding="{Binding order_id}"/>
+                <DataGridTextColumn Header="Изделие"
+                                    Binding="{Binding item}"/>
+                <DataGridTextColumn Header="Количество"
+                                    Binding="{Binding quantity}"/>
+                <DataGridTextColumn Header="Операция"
+                                    Binding="{Binding operation}"/>
+                <DataGridTextColumn Header="Длительность операции"
+                                    Binding="{Binding oper_duration}"/>
+                <DataGridTextColumn Header="Тип"
+                                    Binding="{Binding type}"/>
+                <DataGridTextColumn Header="Дата начала"
+                                    Binding="{Binding date_start}"/>
+                <DataGridTextColumn Header="Дата окончания"
+                                    Binding="{Binding date_end}"/>
+                <DataGridTextColumn Header="Действующий"
+                                    Binding="{Binding is_active}"/>
+                    <!--<DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="name"/>
+                            <Binding Path="date_of_produce"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>-->
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

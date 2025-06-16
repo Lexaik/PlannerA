@@ -1,0 +1,60 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.WorkerPageView"
+             x:DataType="vm:WorkerPageViewModel">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditWorker}"/>
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Workers}"
+                  SelectedItem="{Binding SelectedWorker}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Человек"
+                                    Binding="{Binding person_id}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Профессия"
+                                    Binding="{Binding specialization}"/>
+                <DataGridTextColumn Header="Дата приёма на работу"
+                                    Binding="{Binding date_of_hire}"/>
+                <DataGridTextColumn Header="Дата увольнения"
+                                    Binding="{Binding date_of_separation}"/>
+                <DataGridTextColumn Header="Образование"
+                                    Binding="{Binding education}"/>
+                <DataGridTextColumn Header="Дата окончания обучения"
+                                    Binding="{Binding date_of_education_end}"/>
+                <DataGridTextColumn Header="Подразделение"
+                                    Binding="{Binding department}"/>
+                <DataGridTextColumn Header="Оклад"
+                                    Binding="{Binding salary}"/>
+                <DataGridTextColumn Header="Действующий"
+                                    Binding="{Binding is_active}"/>
+                    <!--<DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="name"/>
+                            <Binding Path="date_of_produce"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>-->
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

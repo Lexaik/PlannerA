@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PlannerA.Desktop.ViewModels"
+
+             x:Class="PlannerA.Desktop.Views.DepartmentPageView"
+             x:DataType="vm:DepartmentPageViewModel">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditDepartment}"/>
+        </StackPanel>
+        
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Departments}"
+                  SelectedItem="{Binding SelectedDepartment}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Наименование"
+                                    Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Руководитель"
+                                    Binding="{Binding person_id}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Binding="{Binding description}"/>
+                <DataGridTextColumn Header="Действующий"
+                                    Binding="{Binding is_active}"/>
+                    <!--<DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="name"/>
+                            <Binding Path="date_of_produce"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>-->
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

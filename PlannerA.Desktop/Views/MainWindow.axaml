@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PlannerA.Desktop.ViewModels"
+       
+        x:Class="PlannerA.Desktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        
+        Icon="/Assets/valve.ico"
+        Title="PlannerA">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate x:Key="DataTemplatePages"
+                      x:DataType="{x:Type vm:PageListItem}">
+            <TextBlock Text="{Binding Title}"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <SplitView DisplayMode="CompactInline"
+               OpenPaneLength="200"
+               CompactPaneLength="33"
+               PanePlacement="Left"
+               IsPaneOpen="{Binding IsPaneOpen}">
+        <SplitView.Pane>
+            <StackPanel Orientation="Vertical">
+                <Button Content="{Binding pic}"
+                        Command="{Binding CommandPaneOpenClose}"/>
+                <ListBox ItemsSource="{Binding Pages}"
+                         SelectedItem="{Binding SelectedPage}"
+                         SelectionMode="Single"
+                         ItemTemplate="{StaticResource DataTemplatePages}"/>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <ContentControl Content="{Binding SelectedPage.PageViewModel}"/>
+        </SplitView.Content>
+    </SplitView>
+
+</Window>

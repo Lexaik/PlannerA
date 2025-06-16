@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PlannerA.Desktop/App.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Components/DateInputComponent.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Components/InputComponent.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/MainWindow.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/ClientPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/DepartmentPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/EditPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/EquipmentPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/ItemPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/MainPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/NewOrderPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/OperationPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/OrderPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/PersonPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/PlanPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/ProcessPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/TablePageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+        <entry key="PlannerA.Desktop/Views/Pages/WorkerPageView.axaml" value="PlannerA.Desktop/PlannerA.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
