@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32bdde5e-eaf1-41cf-b5b3-854a84004091" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Components/DateInputComponent.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Components/DateInputComponent.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/TablePageViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Views/Pages/TablePageView.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlannerA.Desktop/Views/Pages/TablePageView.axaml.cs" afterDir="false" />
+    <list default="true" id="32bdde5e-eaf1-41cf-b5b3-854a84004091" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlannerA/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +19,11 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="LayersApp" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -43,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/PlannerA.BLL/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.DAL/DepartmentDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.DAL/OrderDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/Components/InputComponent.axaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/ClientPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/DepartmentPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PlannerA.Desktop/ViewModels/Pages/EquipmentPageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,18 +73,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.PlannerA.Desktop.executor": "Debug",
+    ".NET Project.PlannerA.Desktop.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "LayersApp",
+    "git-widget-placeholder": "EF-to-BD",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "database.query.execution",
+    "settings.editor.selected.configurable": "preferences.language.and.region",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -160,6 +161,10 @@
       <workItem from="1748938336032" duration="3546000" />
       <workItem from="1748941923457" duration="12941000" />
       <workItem from="1749483292480" duration="1250000" />
+      <workItem from="1749577010440" duration="4806000" />
+      <workItem from="1749962587379" duration="49000" />
+      <workItem from="1749962657813" duration="873000" />
+      <workItem from="1750061845604" duration="390000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия.">
       <option name="closed" value="true" />
@@ -169,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748421540109</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="чуть исправил">
+      <option name="closed" value="true" />
+      <created>1749577043901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749577043901</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,10 +190,34 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="EF-to-BD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия." />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал слоёную архитектуру и создал БД в Postgres с асинхронными методами взаимодействия." />
+    <MESSAGE value="чуть исправил" />
+    <option name="LAST_COMMIT_MESSAGE" value="чуть исправил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
