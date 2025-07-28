@@ -2,5 +2,5 @@ namespace PlannerA.Desktop.ViewModels;
 
 public abstract class PageViewModelBase : ViewModelBase
 {
-    public string Title { get; set; }
+    public string Title { get; set; } = "Заголовок страницы";
 }

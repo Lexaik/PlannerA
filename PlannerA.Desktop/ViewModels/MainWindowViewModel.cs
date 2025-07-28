@@ -12,7 +12,7 @@ public class MainWindowViewModel : ViewModelBase
     [
         new () { PageViewModel = new PlanPageViewModel()},
         new () { PageViewModel = new TablePageViewModel()},
-        new () { PageViewModel = new NewOrderPageViewModel(new OrderService())},
+        new () { PageViewModel = new NewOrderPageViewModel()},
     ];
     [Reactive] public PageListItem SelectedPage { get; set; }
     

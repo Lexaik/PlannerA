@@ -5,31 +5,31 @@ namespace PlannerA.BLL;
 
 public class OrderService : ICrudService<Order>
 {
-    private readonly ICrud<Order> _crud;
+    private readonly IOrderRepository _orderRepository;
 
     public OrderService()
     {
-        _crud = new OrderDbContext();
+        _orderRepository = new OrderRepository();
     }
     
     public async Task<bool> InsertAsync(Order instance)
     {
-        return await _crud.InsertAsync(instance);
+        return await _orderRepository.InsertAsync(instance);
     }
 
     public async Task<bool> UpdateAsync(Order instance)
     {
-        return await _crud.UpdateAsync(instance);
+        return await _orderRepository.UpdateAsync(instance);
     }
 
     public async Task<bool> DeleteAsync(Order instance)
     {
         instance.is_active = false;
-        return await _crud.UpdateAsync(instance);
+        return await _orderRepository.UpdateAsync(instance);
     }
 
     public Task<IEnumerable<Order>> GetAllAsync()
     {
-        return _crud.GetAllAsync(); 
+        return _orderRepository.GetAllAsync(); 
     }
 }

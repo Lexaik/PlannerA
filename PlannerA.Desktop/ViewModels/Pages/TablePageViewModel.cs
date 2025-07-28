@@ -15,7 +15,6 @@ public class TablePageViewModel : PageViewModelBase
         new () { PageViewModel = new OperationPageViewModel(new OperationService())},
         new () { PageViewModel = new WorkerPageViewModel(new WorkerService())},
         new () { PageViewModel = new PersonPageViewModel(new PersonService())},
-        new () { PageViewModel = new DepartmentPageViewModel(new DepartmentService())},
     ];
     [Reactive] public PageListItem selected_content { get; set; }
     public TablePageViewModel()

@@ -5,31 +5,36 @@ namespace PlannerA.BLL;
 
 public class OperationService : ICrudService<Operation>
 {
-    private readonly ICrud<Operation> _crud;
+    private readonly IOperationRepository _operationRepository;
 
     public OperationService()
     {
-        _crud = new OperationDbContext();
+        _operationRepository = new OperationRepository();
     }
-    
+
+    /*public OperationService()
+    {
+        throw new NotImplementedException();
+    }*/
+
     public async Task<bool> InsertAsync(Operation instance)
     {
-        return await _crud.InsertAsync(instance);
+        return await _operationRepository.InsertAsync(instance);
     }
 
     public async Task<bool> UpdateAsync(Operation instance)
     {
-        return await _crud.UpdateAsync(instance);
+        return await _operationRepository.UpdateAsync(instance);
     }
 
     public async Task<bool> DeleteAsync(Operation instance)
     {
         instance.is_active = false;
-        return await _crud.UpdateAsync(instance);
+        return await _operationRepository.UpdateAsync(instance);
     }
 
     public Task<IEnumerable<Operation>> GetAllAsync()
     {
-        return _crud.GetAllAsync(); 
+        return _operationRepository.GetAllAsync(); 
     }
 }

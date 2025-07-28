@@ -10,7 +10,7 @@ public class Factory
         public List<Equipment> equipments { get; set; } = [];
         public Dictionary<Item, int> inventories { get; set; } = [];
         
-        private async Task LoadFactoryOrdersAsync()
+        /*private async Task LoadFactoryOrdersAsync()
         {
                 var factory_orders = await new OrderService().GetAllAsync();
                 orders.Clear();
@@ -53,5 +53,5 @@ public class Factory
                 LoadFactoryWorkersAsync().ConfigureAwait(false);
                 LoadFactoryEquipmentAsync().ConfigureAwait(false);
                 LoadFactoryInventoriesAsync().ConfigureAwait(false);
-        }
+        }*/
 }

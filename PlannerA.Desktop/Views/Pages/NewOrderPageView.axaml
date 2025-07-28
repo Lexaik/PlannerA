@@ -12,15 +12,15 @@
             <StackPanel Orientation="Vertical"
                         DataContext="{Binding order}">
                 <c:InputComponent LabelContent="Название"
+                                  WatermarkText="Название"
                                   InputText="{Binding name}"
                                   IsReadOnly="False"/>
                 <c:InputComponent LabelContent="Клиент"
-                                  InputText="{Binding client}"
+                                  InputText="{Binding client_id}"
                                   IsReadOnly="False"/>
-                
-                <c:InputComponent LabelContent="Дата поступления"
-                                  InputText="{Binding date_start}"
-                                  IsReadOnly="False"/>
+                <c:DateInputComponent LabelContent="Дата поступления"
+                                      
+                                  SelectedDate="{Binding date_start}"/>
                 <c:InputComponent LabelContent="Планируемая дата исполнения"
                                   InputText="{Binding date_end_plan}"
                                   IsReadOnly="False"/>

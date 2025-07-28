@@ -9,12 +9,23 @@ namespace PlannerA.Desktop.ViewModels;
 
 public class NewOrderPageViewModel : PageViewModelBase
 {
-    [Reactive] public Order order { get; set; } = new Order();
+    [Reactive] public DateTimeOffset? datePicker { get; set; }
+    datePicker.SelectedDate = new DateTimeOffset(new DateTime(1950, 1, 1));
+    [Reactive] public Order order { get; set; } = new Order
+    {
+        order_id = 0,
+        name = "",
+        client_id = 25,
+        date_start = default,
+        date_end_plan = default,
+        total_cost = 0
+    };
     
     public ReactiveCommand<Unit, Unit> CommandSave { get; }
     
-    public NewOrderPageViewModel(OrderService order_dbc)
+    public NewOrderPageViewModel()
     {
+        OrderService order_dbc = new OrderService();
         Title = "Новый заказ";
         
         CommandSave = ReactiveCommand.CreateFromTask(async () =>
@@ -30,6 +41,7 @@ public class NewOrderPageViewModel : PageViewModelBase
     public void CommandClear()
     {
         order = null;
+       
     }
 }
 

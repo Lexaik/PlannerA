@@ -31,8 +31,6 @@
                         </StackPanel>
                     </DataTemplate>
                 </DataGridTemplateColumn>-->
-                <DataGridTextColumn Header="Профессия"
-                                    Binding="{Binding specialization}"/>
                 <DataGridTextColumn Header="Дата приёма на работу"
                                     Binding="{Binding date_of_hire}"/>
                 <DataGridTextColumn Header="Дата увольнения"
@@ -41,8 +39,6 @@
                                     Binding="{Binding education}"/>
                 <DataGridTextColumn Header="Дата окончания обучения"
                                     Binding="{Binding date_of_education_end}"/>
-                <DataGridTextColumn Header="Подразделение"
-                                    Binding="{Binding department}"/>
                 <DataGridTextColumn Header="Оклад"
                                     Binding="{Binding salary}"/>
                 <DataGridTextColumn Header="Действующий"

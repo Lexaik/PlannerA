@@ -10,8 +10,8 @@ namespace PlannerA.Desktop.ViewModels;
 public class PlanPageViewModel : PageViewModelBase
 {
     public static DateTime current_date;
-    public static ObservableCollection<DataRow> rows;
-    public static ObservableCollection<DateTime> dates;
+    public static ObservableCollection<DataRow> rows = new ObservableCollection<DataRow>();
+    public static ObservableCollection<DateTime> dates  = new ObservableCollection<DateTime>();
     public static Factory aurora = new();
     public ObservableCollection<string> contents { get; set; } = [];
     [Reactive] public string? selected_content { get; set; }
@@ -82,7 +82,7 @@ public class PlanPageViewModel : PageViewModelBase
         UpdateDates();
         UpdateRows();
     }
-    
+
     public event PropertyChangedEventHandler? PropertyChanged;
     private void OnPropertyChanged(string propertyName)
     {
@@ -93,8 +93,8 @@ public class PlanPageViewModel : PageViewModelBase
         Title = "План";
         var aurora = new Factory();
         current_date = DateTime.Today;
-        rows = new ObservableCollection<DataRow>();
-        dates = new ObservableCollection<DateTime>();
+        //rows = new ObservableCollection<DataRow>();
+        //dates = new ObservableCollection<DateTime>();
         
         contents = ["Заказы", "Оборудование", "Сотрудники", "Материалы"];
         selected_content = contents[0];

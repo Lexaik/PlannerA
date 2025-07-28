@@ -33,8 +33,6 @@
                 </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="Наименование"
                                     Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Тип"
-                                    Binding="{Binding type}"/>
                 <DataGridTextColumn Header="Длительность"
                                     Binding="{Binding duration}"/>
                 <DataGridTextColumn Header="Параметры"

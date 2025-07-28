@@ -38,7 +38,15 @@ public class OrderPageViewModel : PageViewModelBase
         
         CommandCreateOrder = ReactiveCommand.Create(() =>
             {
-                var order = new Order();
+                var order = new Order
+                {
+                    order_id = 0,
+                    name = "",
+                    client_id = 12,
+                    date_start = default,
+                    date_end_plan = default,
+                    total_cost = 0
+                };
 
                 if ((Application.Current?.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)
                     ?.MainWindow

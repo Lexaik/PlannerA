@@ -35,20 +35,14 @@
                                     Binding="{Binding equipment_id}"/>
                 <DataGridTextColumn Header="Наименование"
                                     Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Тип"
-                                    Binding="{Binding type}"/>
                 <DataGridTextColumn Header="Модель"
                                     Binding="{Binding model}"/>
                 <DataGridTextColumn Header="Производитель"
                                     Binding="{Binding manufacturer}"/>
-                <DataGridTextColumn Header="Описание"
-                                    Binding="{Binding description}"/>
                 <DataGridTextColumn Header="Стоимость"
                                     Binding="{Binding price}"/>
                 <DataGridTextColumn Header="Дата покупки"
                                     Binding="{Binding date_of_purchase}"/>
-                <DataGridTextColumn Header="Подразделение"
-                                    Binding="{Binding department}"/>
                 <DataGridTextColumn Header="Действующий"
                                     Binding="{Binding is_active}"/>
                     <!--<DataGridTextColumn.Binding>

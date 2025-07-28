@@ -42,7 +42,7 @@
                 <DataGridTextColumn Header="Наименование"
                                     Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Клиент"
-                                    Binding="{Binding client}"/>
+                                    Binding="{Binding client_id}"/>
                 <DataGridTextColumn Header="Дата запуска"
                                     Binding="{Binding date_start}"/>
                 <DataGridTextColumn Header="Планируемая дата окончания"

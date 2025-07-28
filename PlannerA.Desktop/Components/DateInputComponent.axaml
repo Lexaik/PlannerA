@@ -4,11 +4,12 @@
              x:Class="PlannerA.Desktop.Components.DateInputComponent"
              x:Name="DateComponent">
     <Grid ColumnDefinitions="*, 5*">
-        <Label 
-               
-            Grid.Column="0"/>
-        <DatePicker  
-            
+        <Label Content="{Binding ElementName=DateComponent, Path=LabelContent, Mode=OneWay}"
+               Target="{Binding ElementName=DatePicker}"
+               Grid.Column="0"/>
+        <DatePicker x:Name="DatePicker"
+                    DayFormat="ddd dd"
+                    SelectedDate="{Binding ElementName=DateComponent, Path=SelectedDate}"
             Grid.Column="1"/>
     </Grid>
 </UserControl>

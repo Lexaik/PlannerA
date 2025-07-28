@@ -26,7 +26,7 @@
                 <DataGrid ItemsSource="{Binding Rows}" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{Binding selected_content}" Binding="{Binding name}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{Binding Dates[0]}" Binding="{Binding status[0]}" IsReadOnly="True"/>
+                        <!--<DataGridTextColumn Header="{Binding Dates[0]}" Binding="{Binding status[0]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[1]}" Binding="{Binding status[1]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[2]}" Binding="{Binding status[2]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[3]}" Binding="{Binding status[3]}" IsReadOnly="True"/>
@@ -42,10 +42,10 @@
                         <DataGridTextColumn Header="{Binding Dates[13]}" Binding="{Binding status[13]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[14]}" Binding="{Binding status[14]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[15]}" Binding="{Binding status[15]}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{Binding Dates[16]}" Binding="{Binding status[16]}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{Binding Dates[17]}" Binding="{Binding status[17]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[16]}" Binding="{Binding status[16]}" IsReadOnly="True"/>-->
+                        <!--<DataGridTextColumn Header="{Binding Dates[17]}" Binding="{Binding status[17]}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{Binding Dates[18]}" Binding="{Binding status[18]}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{Binding Dates[19]}" Binding="{Binding status[19]}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{Binding Dates[19]}" Binding="{Binding status[19]}" IsReadOnly="True"/>-->
                     </DataGrid.Columns>
                 </DataGrid>
     </StackPanel>
